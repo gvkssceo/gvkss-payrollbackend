@@ -4,9 +4,9 @@
 -- Insert test plans
 INSERT INTO plans (name, display_name, description, monthly_price, yearly_price, max_employees, features, is_active, is_featured, sort_order) 
 VALUES 
-  ('basic', 'Basic Plan', 'Basic payroll features for small businesses', 29.99, 299.99, 10, '["Direct Deposit","Tax Filing","Basic Reports"]', true, false, 1),
-  ('pro', 'Pro Plan', 'Advanced payroll features for growing businesses', 59.99, 599.99, 50, '["Direct Deposit","Tax Filing","HR Tools","Advanced Reports","Time Tracking"]', true, true, 2),
-  ('enterprise', 'Enterprise Plan', 'Complete payroll solution for large organizations', 99.99, 999.99, 999999, '["Direct Deposit","Tax Filing","HR Tools","Advanced Reports","Time Tracking","Custom Integrations","Priority Support"]', true, false, 3);
+  ('Basic', 'Basic Plan', 'Basic payroll features for small businesses', 39.00, 390.00, 5, '["Full payroll processing","Unlimited direct deposits","Federal & state tax filings","Basic compliance reporting","Email support (72hr response)"]', true, false, 1),
+  ('Standard', 'Standard Plan', 'Advanced payroll features for growing businesses', 99.00, 990.00, 50, '["Full payroll processing","Unlimited direct deposits","Federal & state tax filings","Basic compliance reporting","Email support (72hr response)","Benefits administration","Employee self-service portal","Custom reporting tools","Priority chat support (24hr)","W-2/1099 preparation"]', true, true, 2),
+  ('Premium', 'Premium Plan', 'Complete payroll solution for large organizations', 199.00, 1990.00, 999999, '["Full payroll processing","Unlimited direct deposits","Federal & state tax filings","Basic compliance reporting","Email support (72hr response)","Benefits administration","Employee self-service portal","Custom reporting tools","Priority chat support (24hr)","W-2/1099 preparation","Dedicated payroll specialist","HR compliance auditing","Advanced analytics dashboard","API & accounting integrations","24/7 phone support"]', true, false, 3);
 
 -- Insert test company
 INSERT INTO companies (name, legal_name, email, phone, address_line1, city, state, zip_code, country, status, subscription_status) 

@@ -27,6 +27,9 @@ public class EnrollmentService {
     @Autowired
     private CustomFieldsService customFieldsService;
     
+    @Autowired
+    private SubscriptionService subscriptionService;
+    
     @Transactional
     public EnrollmentResponse beginEnrollment(EnrollmentRequest request) {
         // Check if enrollment already exists for this email
@@ -117,6 +120,17 @@ public class EnrollmentService {
         
         enrollment = enrollmentDataRepository.save(enrollment);
         
+        // Update subscription status based on plan selection
+        try {
+            subscriptionService.updateCompanySubscriptionStatusByEmail(
+                enrollment.getContactEmail(), 
+                planName
+            );
+        } catch (Exception e) {
+            // Log the error but don't fail the enrollment
+            System.err.println("Failed to update subscription status: " + e.getMessage());
+        }
+        
         // Create response
         EnrollmentResponse.EnrollmentData responseData = new EnrollmentResponse.EnrollmentData(
             enrollment.getCompanyName(),
@@ -189,6 +203,17 @@ public class EnrollmentService {
             if (planOpt.isPresent()) {
                 enrollment.setSelectedPlan(planOpt.get());
                 enrollment.setEnrollmentStep(EnrollmentStep.PLAN_SELECTION);
+                
+                // Update subscription status based on plan selection
+                try {
+                    subscriptionService.updateCompanySubscriptionStatusByEmail(
+                        request.getContactEmail(), 
+                        request.getSelectedPlan()
+                    );
+                } catch (Exception e) {
+                    // Log the error but don't fail the enrollment
+                    System.err.println("Failed to update subscription status: " + e.getMessage());
+                }
             }
         }
         

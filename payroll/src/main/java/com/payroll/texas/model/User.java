@@ -26,7 +26,7 @@ public class User {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private UserStatus status = UserStatus.PENDING;
+    private UserStatus status = UserStatus.ACTIVE;
     
     @Column(nullable = false)
     private String firstName;

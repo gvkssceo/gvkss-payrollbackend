@@ -71,6 +71,7 @@ public class CompanySubscription {
         this.billingCycle = billingCycle;
         this.monthlyPrice = monthlyPrice;
         this.status = SubscriptionStatus.TRIAL;
+        this.startDate = LocalDate.now();
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }

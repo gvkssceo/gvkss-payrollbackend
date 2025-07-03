@@ -119,9 +119,16 @@ public class SignupService {
         company.setState(request.getState());
         company.setZipCode(request.getZipCode());
         company.setCountry(request.getCountry());
-        company.setStatus(CompanyStatus.PENDING);
-        company.setSubscriptionStatus(SubscriptionStatus.TRIAL);
-        company.setTrialEndsAt(LocalDateTime.now().plusDays(30)); // 30-day trial
+        // TODO: Implement proper status management in future
+        // For now, set all users/companies to ACTIVE by default
+        company.setStatus(CompanyStatus.ACTIVE);
+        
+        // Only set subscription status if a plan is selected
+        if (request.getSelectedPlan() != null) {
+            company.setSubscriptionStatus(SubscriptionStatus.TRIAL);
+            company.setTrialEndsAt(LocalDateTime.now().plusDays(30)); // 30-day trial
+        }
+        // If no plan selected, leave subscription status as null/default
         
         // Set custom fields if provided
         if (request.getSelectedPlan() != null) {
@@ -148,7 +155,9 @@ public class SignupService {
         user.setLastName(request.getLastName());
         user.setPhone(request.getPhone());
         user.setUserType(UserType.BUSINESS_OWNER);
-        user.setStatus(UserStatus.PENDING);
+        // TODO: Implement proper status management in future
+        // For now, set all users/companies to ACTIVE by default
+        user.setStatus(UserStatus.ACTIVE);
         user.setCompany(company);
         
         // Set custom fields for user preferences

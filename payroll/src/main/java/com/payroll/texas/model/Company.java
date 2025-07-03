@@ -46,7 +46,7 @@ public class Company {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private CompanyStatus status = CompanyStatus.PENDING;
+    private CompanyStatus status = CompanyStatus.ACTIVE;
     
     @Enumerated(EnumType.STRING)
     @Column(name = "subscription_status")

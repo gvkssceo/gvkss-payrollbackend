@@ -334,6 +334,25 @@ http://localhost:8080
   - `budget`: Monthly budget
 - **Response**: List of recommended plans
 
+### Select Plan
+- **POST** `/plans/select`
+- **Description**: Select a plan and update subscription status
+- **Request Body**:
+```json
+{
+  "companyEmail": "company@example.com",
+  "planName": "BASIC"
+}
+```
+- **Response**:
+```json
+{
+  "message": "Plan selected and subscription status updated successfully",
+  "planName": "BASIC",
+  "companyEmail": "company@example.com"
+}
+```
+
 ## Health Check Endpoints
 
 ### Health Check

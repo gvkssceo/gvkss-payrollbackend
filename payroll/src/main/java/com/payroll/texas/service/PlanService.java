@@ -7,6 +7,7 @@ import com.payroll.texas.model.Plan;
 import com.payroll.texas.repository.PlanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +26,10 @@ public class PlanService {
         return plans.stream()
                 .map(this::convertToResponse)
                 .collect(Collectors.toList());
+    }
+    
+    public List<Plan> getAllPlansRaw() {
+        return planRepository.findAll();
     }
     
     public List<PlanResponse> getFeaturedPlans() {
@@ -92,5 +97,50 @@ public class PlanService {
             // Return empty list if parsing fails
             return List.of();
         }
+    }
+    
+    @Transactional
+    public void initializeDefaultPlans() {
+        // Create Basic Plan
+        Plan basicPlan = new Plan();
+        basicPlan.setName("Basic");
+        basicPlan.setDisplayName("Basic Plan");
+        basicPlan.setDescription("Basic payroll features for small businesses");
+        basicPlan.setMonthlyPrice(39.00);
+        basicPlan.setYearlyPrice(390.00);
+        basicPlan.setMaxEmployees(5);
+        basicPlan.setFeatures("[\"Full payroll processing\",\"Unlimited direct deposits\",\"Federal & state tax filings\",\"Basic compliance reporting\",\"Email support (72hr response)\"]");
+        basicPlan.setIsActive(true);
+        basicPlan.setIsFeatured(false);
+        basicPlan.setSortOrder(1);
+        planRepository.save(basicPlan);
+        
+        // Create Standard Plan
+        Plan standardPlan = new Plan();
+        standardPlan.setName("Standard");
+        standardPlan.setDisplayName("Standard Plan");
+        standardPlan.setDescription("Advanced payroll features for growing businesses");
+        standardPlan.setMonthlyPrice(99.00);
+        standardPlan.setYearlyPrice(990.00);
+        standardPlan.setMaxEmployees(50);
+        standardPlan.setFeatures("[\"Full payroll processing\",\"Unlimited direct deposits\",\"Federal & state tax filings\",\"Basic compliance reporting\",\"Email support (72hr response)\",\"Benefits administration\",\"Employee self-service portal\",\"Custom reporting tools\",\"Priority chat support (24hr)\",\"W-2/1099 preparation\"]");
+        standardPlan.setIsActive(true);
+        standardPlan.setIsFeatured(true);
+        standardPlan.setSortOrder(2);
+        planRepository.save(standardPlan);
+        
+        // Create Premium Plan
+        Plan premiumPlan = new Plan();
+        premiumPlan.setName("Premium");
+        premiumPlan.setDisplayName("Premium Plan");
+        premiumPlan.setDescription("Complete payroll solution for large organizations");
+        premiumPlan.setMonthlyPrice(199.00);
+        premiumPlan.setYearlyPrice(1990.00);
+        premiumPlan.setMaxEmployees(999999);
+        premiumPlan.setFeatures("[\"Full payroll processing\",\"Unlimited direct deposits\",\"Federal & state tax filings\",\"Basic compliance reporting\",\"Email support (72hr response)\",\"Benefits administration\",\"Employee self-service portal\",\"Custom reporting tools\",\"Priority chat support (24hr)\",\"W-2/1099 preparation\",\"Dedicated payroll specialist\",\"HR compliance auditing\",\"Advanced analytics dashboard\",\"API & accounting integrations\",\"24/7 phone support\"]");
+        premiumPlan.setIsActive(true);
+        premiumPlan.setIsFeatured(false);
+        premiumPlan.setSortOrder(3);
+        planRepository.save(premiumPlan);
     }
 } 

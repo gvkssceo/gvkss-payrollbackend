@@ -1,8 +1,11 @@
 package com.payroll.texas.controller;
 
 import com.payroll.texas.repository.PlanRepository;
+import com.payroll.texas.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +19,9 @@ public class TestController {
 
     @Autowired
     private PlanRepository planRepository;
+    
+    @Autowired
+    private SubscriptionService subscriptionService;
 
     @GetMapping
     public String test() {
@@ -48,6 +54,33 @@ public class TestController {
             response.put("status", "success");
         } catch (Exception e) {
             response.put("message", "Error retrieving plans: " + e.getMessage());
+            response.put("status", "error");
+            response.put("error", e.toString());
+        }
+        return response;
+    }
+    
+    @PostMapping("/subscription")
+    public Map<String, Object> testSubscription(@RequestBody Map<String, String> request) {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            String companyEmail = request.get("companyEmail");
+            String planName = request.get("planName");
+            
+            if (companyEmail == null || planName == null) {
+                response.put("message", "Company email and plan name are required");
+                response.put("status", "error");
+                return response;
+            }
+            
+            subscriptionService.updateCompanySubscriptionStatusByEmail(companyEmail, planName);
+            
+            response.put("message", "Subscription status updated successfully");
+            response.put("companyEmail", companyEmail);
+            response.put("planName", planName);
+            response.put("status", "success");
+        } catch (Exception e) {
+            response.put("message", "Error updating subscription: " + e.getMessage());
             response.put("status", "error");
             response.put("error", e.toString());
         }

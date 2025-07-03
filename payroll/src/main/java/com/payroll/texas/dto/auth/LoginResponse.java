@@ -88,7 +88,7 @@ public class LoginResponse {
         private String email;
         private String firstName;
         private String lastName;
-        private UserType userType;
+        private String userType;
         private Long companyId;
         private String companyName;
         
@@ -100,7 +100,7 @@ public class LoginResponse {
             this.email = email;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.userType = userType;
+            this.userType = userType.name();
             this.companyId = companyId;
             this.companyName = companyName;
         }
@@ -138,11 +138,11 @@ public class LoginResponse {
             this.lastName = lastName;
         }
         
-        public UserType getUserType() {
+        public String getUserType() {
             return userType;
         }
         
-        public void setUserType(UserType userType) {
+        public void setUserType(String userType) {
             this.userType = userType;
         }
         

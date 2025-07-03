@@ -69,14 +69,22 @@ public class AuthService {
         
         logger.info("Login successful for user: {} (ID: {})", user.getEmail(), user.getId());
         
-        // Generate tokens
+        // Update remember me status
+        user.setRememberMe(loginRequest.getRememberMe());
+        userRepository.save(user);
+        
+        // Generate tokens with different expiration based on remember me
         Map<String, Object> claims = new HashMap<>();
         claims.put("userId", user.getId());
         claims.put("userType", user.getUserType().name());
         claims.put("companyId", user.getCompany() != null ? user.getCompany().getId() : null);
         
-        String accessToken = jwtService.generateToken(claims, user.getEmail(), 86400000L);
-        String refreshToken = jwtService.generateToken(new HashMap<>(), user.getEmail(), 604800000L);
+        // Token expiration: 24 hours for normal login, 30 days for remember me
+        long accessTokenExpiration = loginRequest.getRememberMe() ? 2592000000L : 86400000L; // 30 days vs 24 hours
+        long refreshTokenExpiration = loginRequest.getRememberMe() ? 2592000000L : 604800000L; // 30 days vs 7 days
+        
+        String accessToken = jwtService.generateToken(claims, user.getEmail(), accessTokenExpiration);
+        String refreshToken = jwtService.generateToken(new HashMap<>(), user.getEmail(), refreshTokenExpiration);
         
         // Create user info
         LoginResponse.UserInfo userInfo = new LoginResponse.UserInfo(
@@ -89,7 +97,9 @@ public class AuthService {
             user.getCompany() != null ? user.getCompany().getName() : null
         );
         
-        return new LoginResponse(accessToken, refreshToken, 86400L, userInfo);
+        // Return expiration time in seconds
+        long expirationInSeconds = loginRequest.getRememberMe() ? 2592000L : 86400L; // 30 days vs 24 hours
+        return new LoginResponse(accessToken, refreshToken, expirationInSeconds, userInfo);
     }
     
     public String refreshToken(String refreshToken) {
@@ -135,5 +145,56 @@ public class AuthService {
             logger.debug("Token validation failed");
         }
         return isValid;
+    }
+    
+    public Map<String, Object> validateTokenAndGetUser(String token) {
+        Map<String, Object> response = new HashMap<>();
+        
+        if (!jwtService.validateToken(token)) {
+            logger.debug("Token validation failed");
+            response.put("valid", false);
+            return response;
+        }
+        
+        try {
+            String email = jwtService.extractUsername(token);
+            User user = userRepository.findByEmailAndNotDeleted(email)
+                    .orElse(null);
+            
+            if (user == null) {
+                logger.warn("User not found for email: {}", email);
+                response.put("valid", false);
+                return response;
+            }
+            
+            // Check if user is active
+            if (!user.isActive()) {
+                logger.warn("User is not active: {}", email);
+                response.put("valid", false);
+                return response;
+            }
+            
+            // Create user info
+            Map<String, Object> userInfo = new HashMap<>();
+            userInfo.put("id", user.getId());
+            userInfo.put("email", user.getEmail());
+            userInfo.put("firstName", user.getFirstName());
+            userInfo.put("lastName", user.getLastName());
+            userInfo.put("userType", user.getUserType().name());
+            userInfo.put("companyId", user.getCompany() != null ? user.getCompany().getId() : null);
+            userInfo.put("companyName", user.getCompany() != null ? user.getCompany().getName() : null);
+            
+            response.put("valid", true);
+            response.put("userInfo", userInfo);
+            
+            logger.debug("Token validated successfully for user: {}", email);
+            return response;
+            
+        } catch (Exception e) {
+            logger.error("Error validating token and getting user: {}", e.getMessage());
+            response.put("valid", false);
+            response.put("error", "Token validation failed");
+            return response;
+        }
     }
 } 

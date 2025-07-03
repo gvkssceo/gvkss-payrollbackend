@@ -16,7 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
-// @CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://127.0.0.1:5173"})
 public class AuthController {
 
     @Autowired
@@ -87,18 +87,16 @@ public class AuthController {
     }
 
     @GetMapping("/validate")
-    public ResponseEntity<Map<String, Boolean>> validateToken(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<Map<String, Object>> validateToken(@RequestHeader("Authorization") String authHeader) {
         try {
             String token = authHeader.substring(7); // Remove "Bearer "
-            boolean isValid = authService.validateToken(token);
-            
-            Map<String, Boolean> response = new HashMap<>();
-            response.put("valid", isValid);
+            Map<String, Object> response = authService.validateTokenAndGetUser(token);
             
             return ResponseEntity.ok(response);
         } catch (Exception e) {
-            Map<String, Boolean> errorResponse = new HashMap<>();
+            Map<String, Object> errorResponse = new HashMap<>();
             errorResponse.put("valid", false);
+            errorResponse.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(errorResponse);
         }
     }
