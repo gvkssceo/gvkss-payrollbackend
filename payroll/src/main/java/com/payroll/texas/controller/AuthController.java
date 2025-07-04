@@ -8,6 +8,7 @@ import com.payroll.texas.service.AuthService;
 import com.payroll.texas.service.SignupService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,9 @@ public class AuthController {
     
     @Autowired
     private SignupService signupService;
+
+    @Autowired
+    private com.payroll.texas.repository.UserRepository userRepository;
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
@@ -157,5 +161,154 @@ public class AuthController {
         response.put("message", isValid ? "Password is valid" : "Password must be at least 8 characters");
         
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<?> getCurrentUserProfile(@RequestHeader("Authorization") String authHeader) {
+        try {
+            String token = authHeader.substring(7); // Remove "Bearer "
+            
+            // Validate token and get user info
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+            
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+            
+            Map<String, Object> userInfo = (Map<String, Object>) validationResult.get("userInfo");
+            Long userId = (Long) userInfo.get("id");
+            
+            // Fetch the actual user from database
+            com.payroll.texas.model.User user = userRepository.findById(userId)
+                .orElse(null);
+                
+            if (user == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(java.util.Map.of("error", "User not found"));
+            }
+            
+            com.payroll.texas.model.Company company = user.getCompany();
+            java.util.Map<String, Object> companyInfo = company == null ? null : java.util.Map.of(
+                "id", company.getId(),
+                "name", company.getName()
+            );
+            
+            java.util.Map<String, Object> response = new java.util.HashMap<>();
+            response.put("id", user.getId());
+            response.put("name", user.getFirstName() + (user.getLastName() != null ? (" " + user.getLastName()) : ""));
+            response.put("email", user.getEmail());
+            response.put("imageUrl", null); // Add imageUrl if available
+            response.put("company", companyInfo);
+            
+            return ResponseEntity.ok(response);
+            
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(java.util.Map.of("error", "Failed to get user profile: " + e.getMessage()));
+        }
+    }
+
+    @GetMapping("/user/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable Long id, @RequestHeader("Authorization") String authHeader) {
+        try {
+            String token = authHeader.substring(7); // Remove "Bearer "
+            
+            // Validate token and get user info
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+            
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+            
+            Map<String, Object> userInfo = (Map<String, Object>) validationResult.get("userInfo");
+            Long authenticatedUserId = (Long) userInfo.get("id");
+            
+            // For security, only allow users to fetch their own data or company data
+            // You can modify this logic based on your requirements
+            if (!authenticatedUserId.equals(id)) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(java.util.Map.of("error", "Access denied"));
+            }
+            
+            // Fetch the user from database
+            com.payroll.texas.model.User user = userRepository.findById(id)
+                .orElse(null);
+                
+            if (user == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(java.util.Map.of("error", "User not found"));
+            }
+            
+            com.payroll.texas.model.Company company = user.getCompany();
+            java.util.Map<String, Object> companyInfo = company == null ? null : java.util.Map.of(
+                "id", company.getId(),
+                "name", company.getName()
+            );
+            
+            java.util.Map<String, Object> response = new java.util.HashMap<>();
+            response.put("id", user.getId());
+            response.put("name", user.getFirstName() + (user.getLastName() != null ? (" " + user.getLastName()) : ""));
+            response.put("email", user.getEmail());
+            response.put("imageUrl", null); // Add imageUrl if available
+            response.put("company", companyInfo);
+            
+            return ResponseEntity.ok(response);
+            
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(java.util.Map.of("error", "Failed to get user: " + e.getMessage()));
+        }
+    }
+
+    @Autowired
+    private com.payroll.texas.repository.CompanyRepository companyRepository;
+
+    @GetMapping("/company/{id}")
+    public ResponseEntity<?> getCompanyById(@PathVariable Long id, @RequestHeader("Authorization") String authHeader) {
+        try {
+            String token = authHeader.substring(7); // Remove "Bearer "
+            
+            // Validate token and get user info
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+            
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+            
+            Map<String, Object> userInfo = (Map<String, Object>) validationResult.get("userInfo");
+            Long userCompanyId = (Long) userInfo.get("companyId");
+            
+            // For security, only allow users to fetch their own company data
+            if (!id.equals(userCompanyId)) {
+                return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(java.util.Map.of("error", "Access denied"));
+            }
+            
+            // Fetch the company from database
+            com.payroll.texas.model.Company company = companyRepository.findById(id)
+                .orElse(null);
+                
+            if (company == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(java.util.Map.of("error", "Company not found"));
+            }
+            
+            java.util.Map<String, Object> companyInfo = new java.util.HashMap<>();
+            companyInfo.put("id", company.getId());
+            companyInfo.put("name", company.getName());
+            companyInfo.put("email", company.getEmail());
+            companyInfo.put("phone", company.getPhone());
+            companyInfo.put("status", company.getStatus());
+            companyInfo.put("subscriptionStatus", company.getSubscriptionStatus());
+            
+            return ResponseEntity.ok(companyInfo);
+            
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(java.util.Map.of("error", "Failed to get company: " + e.getMessage()));
+        }
     }
 } 

@@ -106,8 +106,8 @@ public class PlanService {
         basicPlan.setName("Basic");
         basicPlan.setDisplayName("Basic Plan");
         basicPlan.setDescription("Basic payroll features for small businesses");
-        basicPlan.setMonthlyPrice(39.00);
-        basicPlan.setYearlyPrice(390.00);
+        basicPlan.setMonthlyPrice(new java.math.BigDecimal("39.00"));
+        basicPlan.setYearlyPrice(new java.math.BigDecimal("390.00"));
         basicPlan.setMaxEmployees(5);
         basicPlan.setFeatures("[\"Full payroll processing\",\"Unlimited direct deposits\",\"Federal & state tax filings\",\"Basic compliance reporting\",\"Email support (72hr response)\"]");
         basicPlan.setIsActive(true);
@@ -120,8 +120,8 @@ public class PlanService {
         standardPlan.setName("Standard");
         standardPlan.setDisplayName("Standard Plan");
         standardPlan.setDescription("Advanced payroll features for growing businesses");
-        standardPlan.setMonthlyPrice(99.00);
-        standardPlan.setYearlyPrice(990.00);
+        standardPlan.setMonthlyPrice(new java.math.BigDecimal("99.00"));
+        standardPlan.setYearlyPrice(new java.math.BigDecimal("990.00"));
         standardPlan.setMaxEmployees(50);
         standardPlan.setFeatures("[\"Full payroll processing\",\"Unlimited direct deposits\",\"Federal & state tax filings\",\"Basic compliance reporting\",\"Email support (72hr response)\",\"Benefits administration\",\"Employee self-service portal\",\"Custom reporting tools\",\"Priority chat support (24hr)\",\"W-2/1099 preparation\"]");
         standardPlan.setIsActive(true);
@@ -134,8 +134,8 @@ public class PlanService {
         premiumPlan.setName("Premium");
         premiumPlan.setDisplayName("Premium Plan");
         premiumPlan.setDescription("Complete payroll solution for large organizations");
-        premiumPlan.setMonthlyPrice(199.00);
-        premiumPlan.setYearlyPrice(1990.00);
+        premiumPlan.setMonthlyPrice(new java.math.BigDecimal("199.00"));
+        premiumPlan.setYearlyPrice(new java.math.BigDecimal("1990.00"));
         premiumPlan.setMaxEmployees(999999);
         premiumPlan.setFeatures("[\"Full payroll processing\",\"Unlimited direct deposits\",\"Federal & state tax filings\",\"Basic compliance reporting\",\"Email support (72hr response)\",\"Benefits administration\",\"Employee self-service portal\",\"Custom reporting tools\",\"Priority chat support (24hr)\",\"W-2/1099 preparation\",\"Dedicated payroll specialist\",\"HR compliance auditing\",\"Advanced analytics dashboard\",\"API & accounting integrations\",\"24/7 phone support\"]");
         premiumPlan.setIsActive(true);

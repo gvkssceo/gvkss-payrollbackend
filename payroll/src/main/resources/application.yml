@@ -46,7 +46,7 @@ jwt:
 # Encryption Configuration
 app:
   encryption:
-    key: your-256-bit-encryption-key-here-for-sensitive-data
+    key: dGhpc2lzYXRlc3RlbmNyeXB0aW9ua2V5Zm9yZGV2ZWxvcG1lbnRwdXJwb3Nlc29ubHk=
     algorithm: AES/GCM/NoPadding
     ssn:
       enabled: true

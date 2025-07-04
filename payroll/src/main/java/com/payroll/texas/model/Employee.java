@@ -17,7 +17,7 @@ public class Employee {
     private Long id;
     
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
+    @JoinColumn(name = "company_id", nullable = true)
     private Company company;
     
     @Column(nullable = false)
@@ -50,7 +50,7 @@ public class Employee {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "employee_type", nullable = false)
-    private EmploymentType employmentType;
+    private EmployeeType employeeType;
     
     // Employment Details (Static - Payroll Requirements)
     private String jobTitle;
@@ -148,11 +148,10 @@ public class Employee {
     // Constructors
     public Employee() {}
     
-    public Employee(Company company, String firstName, String lastName, EmploymentType employmentType) {
-        this.company = company;
+    public Employee(String firstName, String lastName, EmployeeType employeeType) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.employmentType = employmentType;
+        this.employeeType = employeeType;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
@@ -254,12 +253,12 @@ public class Employee {
         this.status = status;
     }
     
-    public EmploymentType getEmploymentType() {
-        return employmentType;
+    public EmployeeType getEmployeeType() {
+        return employeeType;
     }
     
-    public void setEmploymentType(EmploymentType employmentType) {
-        this.employmentType = employmentType;
+    public void setEmployeeType(EmployeeType employeeType) {
+        this.employeeType = employeeType;
     }
     
     public String getJobTitle() {
@@ -521,11 +520,11 @@ public class Employee {
     }
     
     public boolean isHourly() {
-        return employmentType == EmploymentType.HOURLY;
+        return compensationType == CompensationType.HOURLY;
     }
     
     public boolean isSalaried() {
-        return employmentType == EmploymentType.SALARIED;
+        return compensationType == CompensationType.SALARY;
     }
     
     public String getFullName() {
@@ -551,7 +550,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", employeeId='" + employeeId + '\'' +
                 ", status=" + status +
-                ", employmentType=" + employmentType +
+                ", employeeType=" + employeeType +
                 '}';
     }
 } 
