@@ -2,8 +2,10 @@ package com.payroll.texas.service;
 
 import com.payroll.texas.model.Company;
 import com.payroll.texas.model.Employee;
+import com.payroll.texas.model.User;
 import com.payroll.texas.repository.CompanyRepository;
 import com.payroll.texas.repository.EmployeeRepository;
+import com.payroll.texas.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class EmployeeService {
     
     @Autowired
     private CompanyRepository companyRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     public Employee saveEmployee(Employee employee) {
         logger.info("Saving employee: {}", employee.getEmail());
@@ -43,17 +48,9 @@ public class EmployeeService {
             throw new RuntimeException("Compensation type is required");
         }
         
-        // Set company from current user context (dynamic)
+        // Company should already be set from the controller
         if (employee.getCompany() == null) {
-            // TODO: Get company from JWT token or user session
-            // For now, get the first available company
-            List<Company> companies = companyRepository.findAll();
-            if (companies.isEmpty()) {
-                throw new RuntimeException("No companies found in system");
-            }
-            Company userCompany = companies.get(0);
-            logger.info("Setting company from user context: {}", userCompany.getName());
-            employee.setCompany(userCompany);
+            throw new RuntimeException("Company is required for employee creation");
         }
         
         // Set default values
@@ -249,6 +246,35 @@ public class EmployeeService {
     }
 
     public Company getCompanyById(Long id) {
-        return companyRepository.findById(id).orElse(null);
+        logger.info("Fetching company by ID: {}", id);
+        Company company = companyRepository.findById(id).orElse(null);
+        if (company != null) {
+            logger.info("Found company: {}", company.getName());
+        } else {
+            logger.warn("Company not found with ID: {}", id);
+        }
+        return company;
+    }
+    
+    /**
+     * Get company from authenticated user context
+     * This method should be called from controllers that have access to the JWT token
+     */
+    public Company getCompanyFromUserContext(Long userId) {
+        logger.info("Getting company from user context for user ID: {}", userId);
+        User user = userRepository.findById(userId).orElse(null);
+        if (user == null) {
+            logger.warn("User not found with ID: {}", userId);
+            return null;
+        }
+        
+        Company company = user.getCompany();
+        if (company == null) {
+            logger.warn("User {} has no associated company", userId);
+            return null;
+        }
+        
+        logger.info("Found company {} for user {}", company.getName(), userId);
+        return company;
     }
 } 

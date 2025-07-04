@@ -2,6 +2,7 @@ package com.payroll.texas.controller;
 
 import com.payroll.texas.model.Employee;
 import com.payroll.texas.service.EmployeeService;
+import com.payroll.texas.service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class EmployeeController {
     
     @Autowired
     private EmployeeService employeeService;
+    
+    @Autowired
+    private AuthService authService;
 
     // Constructor to verify controller is being instantiated
     public EmployeeController() {
@@ -138,16 +142,32 @@ public class EmployeeController {
         }
     }
 
-    // Add new employee with explicit companyId
+    // Add new employee with company
     @PostMapping("/addemployee-with-company")
-    public ResponseEntity<?> addEmployeeWithCompany(@RequestBody java.util.Map<String, Object> payload) {
+    public ResponseEntity<?> addEmployeeWithCompany(@RequestBody java.util.Map<String, Object> payload, @RequestHeader("Authorization") String authHeader) {
         try {
-            // Extract companyId and employee from payload
-            Integer companyIdInt = (Integer) payload.get("companyId");
-            Long companyId = companyIdInt != null ? companyIdInt.longValue() : null;
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            java.util.Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+            
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+            
+            java.util.Map<String, Object> userInfo = (java.util.Map<String, Object>) validationResult.get("userInfo");
+            Long userId = (Long) userInfo.get("id");
+            
+            // Get company from authenticated user context
+            com.payroll.texas.model.Company company = employeeService.getCompanyFromUserContext(userId);
+            if (company == null) {
+                return ResponseEntity.badRequest().body(java.util.Map.of("error", "User not associated with any company"));
+            }
+            
+            // Extract employee data from payload
             Object employeeObj = payload.get("employee");
-            if (companyId == null || employeeObj == null) {
-                return ResponseEntity.badRequest().body(java.util.Map.of("error", "companyId and employee are required"));
+            if (employeeObj == null) {
+                return ResponseEntity.badRequest().body(java.util.Map.of("error", "Employee data is required"));
             }
 
             // Convert employeeObj to Employee, with JavaTimeModule for LocalDate
@@ -155,11 +175,7 @@ public class EmployeeController {
             mapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());
             Employee employee = mapper.convertValue(employeeObj, Employee.class);
 
-            // Fetch company and set on employee
-            com.payroll.texas.model.Company company = employeeService.getCompanyById(companyId);
-            if (company == null) {
-                return ResponseEntity.badRequest().body(java.util.Map.of("error", "Company not found"));
-            }
+            // Set company from authenticated user context
             employee.setCompany(company);
 
             Employee savedEmployee = employeeService.saveEmployee(employee);
