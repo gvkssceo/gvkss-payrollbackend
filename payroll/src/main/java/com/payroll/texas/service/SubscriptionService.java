@@ -1,6 +1,7 @@
 package com.payroll.texas.service;
 
 import com.payroll.texas.model.Company;
+import com.payroll.texas.model.CompanyStatus;
 import com.payroll.texas.model.CompanySubscription;
 import com.payroll.texas.model.Plan;
 import com.payroll.texas.model.SubscriptionStatus;
