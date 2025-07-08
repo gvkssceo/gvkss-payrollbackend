@@ -277,4 +277,14 @@ public class EmployeeService {
         logger.info("Found company {} for user {}", company.getName(), userId);
         return company;
     }
+
+    public List<Employee> getEmployeesByCompanyId(Long companyId) {
+        logger.info("Fetching employees for company ID: {}", companyId);
+        return employeeRepository.findByCompanyId(companyId);
+    }
+
+    public List<Employee> getEmployeesByCompanyIdAndStatus(Long companyId, com.payroll.texas.model.EmployeeStatus status) {
+        logger.info("Fetching employees for company ID: {} and status: {}", companyId, status);
+        return employeeRepository.findByCompanyIdAndStatus(companyId, status);
+    }
 } 

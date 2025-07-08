@@ -1,6 +1,12 @@
 package com.payroll.texas.controller;
 
 import com.payroll.texas.dto.plan.PlanResponse;
+import com.payroll.texas.model.Company;
+import com.payroll.texas.model.CompanySubscription;
+import com.payroll.texas.model.Plan;
+import com.payroll.texas.repository.CompanyRepository;
+import com.payroll.texas.repository.CompanySubscriptionRepository;
+import com.payroll.texas.repository.PlanRepository;
 import com.payroll.texas.service.PlanService;
 import com.payroll.texas.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/plans")
@@ -21,6 +28,15 @@ public class PlanController {
     
     @Autowired
     private SubscriptionService subscriptionService;
+    
+    @Autowired
+    private CompanyRepository companyRepository;
+    
+    @Autowired
+    private CompanySubscriptionRepository subscriptionRepository;
+    
+    @Autowired
+    private PlanRepository planRepository;
     
     @GetMapping("/test-subscription")
     public ResponseEntity<Map<String, Object>> testSubscription() {
@@ -257,6 +273,53 @@ public class PlanController {
             List<com.payroll.texas.model.Plan> newPlans = planService.getAllPlansRaw();
             response.put("message", "Plans initialized successfully");
             response.put("createdPlans", newPlans.stream().map(com.payroll.texas.model.Plan::getName).collect(java.util.stream.Collectors.toList()));
+            
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("error", e.getMessage());
+            return ResponseEntity.internalServerError().body(response);
+        }
+    }
+
+    @GetMapping("/debug-subscription/{email}")
+    public ResponseEntity<Map<String, Object>> debugSubscription(@PathVariable String email) {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            // Check if company exists
+            Optional<Company> companyOpt = companyRepository.findByEmail(email);
+            if (companyOpt.isPresent()) {
+                Company company = companyOpt.get();
+                response.put("companyExists", true);
+                response.put("companyId", company.getId());
+                response.put("companyName", company.getName());
+                response.put("companyEmail", company.getEmail());
+                response.put("subscriptionStatus", company.getSubscriptionStatus());
+                response.put("customFields", company.getCustomFields());
+                
+                // Check subscription record
+                Optional<CompanySubscription> subscriptionOpt = subscriptionRepository.findByCompanyId(company.getId());
+                if (subscriptionOpt.isPresent()) {
+                    CompanySubscription subscription = subscriptionOpt.get();
+                    response.put("subscriptionExists", true);
+                    response.put("subscriptionId", subscription.getId());
+                    response.put("subscriptionStatus", subscription.getStatus());
+                    response.put("planName", subscription.getPlan() != null ? subscription.getPlan().getName() : "null");
+                    response.put("planId", subscription.getPlan() != null ? subscription.getPlan().getId() : "null");
+                } else {
+                    response.put("subscriptionExists", false);
+                }
+            } else {
+                response.put("companyExists", false);
+            }
+            
+            // Check all available plans
+            List<Plan> allPlans = planRepository.findAll();
+            response.put("availablePlans", allPlans.stream().map(p -> Map.of(
+                "id", p.getId(),
+                "name", p.getName(),
+                "displayName", p.getDisplayName(),
+                "isActive", p.getIsActive()
+            )).collect(java.util.stream.Collectors.toList()));
             
             return ResponseEntity.ok(response);
         } catch (Exception e) {

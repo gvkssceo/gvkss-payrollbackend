@@ -65,28 +65,57 @@ public class EmployeeController {
 
     // Get all employees
     @GetMapping("/getallemployees")
-    public ResponseEntity<?> getAllEmployees() {
-        logger.info("Received request to get all employees");
+    public ResponseEntity<?> getAllEmployees(
+            @RequestHeader("Authorization") String authHeader,
+            @RequestParam(value = "status", required = false) String statusParam
+    ) {
+        logger.info("Received request to get all employees for logged-in user's company");
         try {
-            List<Employee> employees = employeeService.getAllEmployees();
-            logger.info("Successfully retrieved {} employees", employees.size());
-            
-         // Create simple response DTOs to avoid circular references
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            java.util.Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+
+            java.util.Map<String, Object> userInfo = (java.util.Map<String, Object>) validationResult.get("userInfo");
+            Long userId = ((Number) userInfo.get("id")).longValue();
+
+            // Get company from authenticated user context
+            com.payroll.texas.model.Company company = employeeService.getCompanyFromUserContext(userId);
+            if (company == null) {
+                return ResponseEntity.badRequest().body(java.util.Map.of("error", "User not associated with any company"));
+            }
+
+            java.util.List<Employee> employees;
+            if (statusParam != null) {
+                com.payroll.texas.model.EmployeeStatus status = com.payroll.texas.model.EmployeeStatus.valueOf(statusParam.toUpperCase());
+                employees = employeeService.getEmployeesByCompanyIdAndStatus(company.getId(), status);
+            } else {
+                employees = employeeService.getEmployeesByCompanyId(company.getId());
+            }
+            logger.info("Successfully retrieved {} employees for company {}{}", employees.size(), company.getId(), statusParam != null ? (" and status " + statusParam) : "");
+
+            // Create simple response DTOs to avoid circular references
             java.util.List<java.util.Map<String, Object>> employeeDtos = employees.stream()
-                .map(emp -> {
-                    java.util.Map<String, Object> dto = new java.util.HashMap<>();
-                    dto.put("id", emp.getId());
-                    dto.put("firstName", emp.getFirstName());
-                    dto.put("lastName", emp.getLastName());
-                    dto.put("email", emp.getEmail());
-                    dto.put("phone", emp.getPhone());
-                    dto.put("jobTitle", emp.getJobTitle());
-                    dto.put("status", emp.getStatus());
-                    dto.put("employeeType", emp.getEmployeeType());
-                    dto.put("hireDate", emp.getHireDate());
-                    return dto;
-                })
-                .toList();
+                    .map(emp -> {
+                        java.util.Map<String, Object> dto = new java.util.HashMap<>();
+                        dto.put("id", emp.getId());
+                        dto.put("firstName", emp.getFirstName());
+                        dto.put("lastName", emp.getLastName());
+                        dto.put("email", emp.getEmail());
+                        dto.put("phone", emp.getPhone());
+                        dto.put("jobTitle", emp.getJobTitle());
+                        dto.put("status", emp.getStatus());
+                        dto.put("employeeType", emp.getEmployeeType());
+                        dto.put("hireDate", emp.getHireDate());
+                        // Add companyId for debugging
+                        dto.put("companyId", emp.getCompany() != null ? emp.getCompany().getId() : null);
+                        return dto;
+                    })
+                    .toList();
 
             return new ResponseEntity<>(employeeDtos, HttpStatus.OK);
         } catch (Exception e) {

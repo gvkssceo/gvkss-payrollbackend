@@ -32,49 +32,93 @@ public class SubscriptionService {
     
     @Transactional
     public void updateCompanySubscriptionStatus(Long companyId, String planName) {
-        // Find the company
-        Optional<Company> companyOpt = companyRepository.findById(companyId);
-        if (companyOpt.isEmpty()) {
-            throw new RuntimeException("Company not found with ID: " + companyId);
+        try {
+            System.out.println("SubscriptionService: Updating subscription for company ID: " + companyId + ", plan: " + planName);
+            
+            // Find the company
+            Optional<Company> companyOpt = companyRepository.findById(companyId);
+            if (companyOpt.isEmpty()) {
+                throw new RuntimeException("Company not found with ID: " + companyId);
+            }
+            
+            // Find the plan
+            Optional<Plan> planOpt = planRepository.findByName(planName);
+            if (planOpt.isEmpty()) {
+                // Get all available plan names for debugging
+                List<String> availablePlans = planRepository.findAll().stream()
+                    .map(Plan::getName)
+                    .collect(java.util.stream.Collectors.toList());
+                System.err.println("SubscriptionService: Plan not found: '" + planName + "'. Available plans: " + availablePlans);
+                throw new RuntimeException("Plan not found: '" + planName + "'. Available plans: " + availablePlans);
+            }
+            
+            Company company = companyOpt.get();
+            Plan plan = planOpt.get();
+            
+            System.out.println("SubscriptionService: Found company: " + company.getName() + ", plan: " + plan.getName());
+            
+            // Update company subscription status based on plan
+            SubscriptionStatus newStatus = determineSubscriptionStatus(plan);
+            company.setSubscriptionStatus(newStatus);
+            
+            // Set trial end date if it's a trial plan
+            if (newStatus == SubscriptionStatus.TRIAL) {
+                company.setTrialEndsAt(LocalDateTime.now().plusDays(30)); // 30-day trial
+            }
+            
+            // Update custom fields with plan selection
+            String customFields = company.getCustomFields();
+            if (customFields == null || customFields.isEmpty()) {
+                customFields = "{}";
+            }
+            
+            // Add plan selection to custom fields
+            customFields = customFields.replace("}", "");
+            if (!customFields.endsWith("{")) {
+                customFields += ",";
+            }
+            customFields += "\"selected_plan\":\"" + plan.getName() + "\",\"plan_selected_at\":\"" + LocalDateTime.now() + "\"}";
+            company.setCustomFields(customFields);
+            
+            company = companyRepository.save(company);
+            System.out.println("SubscriptionService: Company updated with subscription status: " + newStatus);
+            
+            // Create or update company subscription record
+            createOrUpdateCompanySubscription(company, plan, newStatus);
+            System.out.println("SubscriptionService: Company subscription record created/updated");
+            
+        } catch (Exception e) {
+            System.err.println("SubscriptionService: Error in updateCompanySubscriptionStatus: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
         }
-        
-        // Find the plan
-        Optional<Plan> planOpt = planRepository.findByName(planName);
-        if (planOpt.isEmpty()) {
-            // Get all available plan names for debugging
-            List<String> availablePlans = planRepository.findAll().stream()
-                .map(Plan::getName)
-                .collect(java.util.stream.Collectors.toList());
-            throw new RuntimeException("Plan not found: '" + planName + "'. Available plans: " + availablePlans);
-        }
-        
-        Company company = companyOpt.get();
-        Plan plan = planOpt.get();
-        
-        // Update company subscription status based on plan
-        SubscriptionStatus newStatus = determineSubscriptionStatus(plan);
-        company.setSubscriptionStatus(newStatus);
-        
-        // Set trial end date if it's a trial plan
-        if (newStatus == SubscriptionStatus.TRIAL) {
-            company.setTrialEndsAt(LocalDateTime.now().plusDays(30)); // 30-day trial
-        }
-        
-        companyRepository.save(company);
-        
-        // Create or update company subscription record
-        createOrUpdateCompanySubscription(company, plan, newStatus);
     }
     
     @Transactional
     public void updateCompanySubscriptionStatusByEmail(String companyEmail, String planName) {
-        // Find the company by email
-        Optional<Company> companyOpt = companyRepository.findByEmail(companyEmail);
-        if (companyOpt.isEmpty()) {
-            throw new RuntimeException("Company not found with email: " + companyEmail);
+        try {
+            System.out.println("SubscriptionService: Starting plan selection for email: " + companyEmail + ", plan: " + planName);
+            
+            // Find the company by email
+            Optional<Company> companyOpt = companyRepository.findByEmail(companyEmail);
+            if (companyOpt.isEmpty()) {
+                // If company doesn't exist, create it
+                System.out.println("SubscriptionService: Company not found, creating new company for email: " + companyEmail);
+                Company newCompany = createCompanyFromEmail(companyEmail);
+                companyOpt = Optional.of(newCompany);
+            }
+            
+            Company company = companyOpt.get();
+            System.out.println("SubscriptionService: Found/created company with ID: " + company.getId());
+            
+            updateCompanySubscriptionStatus(company.getId(), planName);
+            System.out.println("SubscriptionService: Plan selection completed successfully");
+            
+        } catch (Exception e) {
+            System.err.println("SubscriptionService: Error in updateCompanySubscriptionStatusByEmail: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Failed to update subscription status: " + e.getMessage(), e);
         }
-        
-        updateCompanySubscriptionStatus(companyOpt.get().getId(), planName);
     }
     
     private SubscriptionStatus determineSubscriptionStatus(Plan plan) {
@@ -94,35 +138,60 @@ public class SubscriptionService {
     }
     
     private void createOrUpdateCompanySubscription(Company company, Plan plan, SubscriptionStatus status) {
-        // Check if subscription already exists
-        Optional<CompanySubscription> existingSubscription = subscriptionRepository.findByCompanyId(company.getId());
-        
-        CompanySubscription subscription;
-        if (existingSubscription.isPresent()) {
-            // Update existing subscription
-            subscription = existingSubscription.get();
-            subscription.setPlan(plan);
-            subscription.setStatus(status);
-            subscription.setMonthlyPrice(plan.getMonthlyPrice());
-            subscription.setUpdatedAt(LocalDateTime.now());
-        } else {
-            // Create new subscription
-            subscription = new CompanySubscription(
-                company,
-                plan,
-                BillingCycle.MONTHLY, // Default to monthly billing
-                plan.getMonthlyPrice()
-            );
-            subscription.setStatus(status);
-            subscription.setStartDate(LocalDate.now());
+        try {
+            System.out.println("SubscriptionService: Creating/updating subscription for company: " + company.getId());
             
-            // Set trial end date if it's a trial
-            if (status == SubscriptionStatus.TRIAL) {
-                subscription.setTrialEndsAt(LocalDateTime.now().plusDays(30));
+            // Check if subscription already exists
+            Optional<CompanySubscription> existingSubscription = subscriptionRepository.findByCompanyId(company.getId());
+            
+            CompanySubscription subscription;
+            if (existingSubscription.isPresent()) {
+                // Update existing subscription
+                System.out.println("SubscriptionService: Updating existing subscription");
+                subscription = existingSubscription.get();
+                subscription.setPlan(plan);
+                subscription.setStatus(status);
+                subscription.setMonthlyPrice(plan.getMonthlyPrice());
+                subscription.setUpdatedAt(LocalDateTime.now());
+            } else {
+                // Create new subscription
+                System.out.println("SubscriptionService: Creating new subscription");
+                subscription = new CompanySubscription(
+                    company,
+                    plan,
+                    BillingCycle.MONTHLY, // Default to monthly billing
+                    plan.getMonthlyPrice()
+                );
+                subscription.setStatus(status);
+                subscription.setStartDate(LocalDate.now());
+                
+                // Set trial end date if it's a trial
+                if (status == SubscriptionStatus.TRIAL) {
+                    subscription.setTrialEndsAt(LocalDateTime.now().plusDays(30));
+                }
             }
+            
+            subscription = subscriptionRepository.save(subscription);
+            System.out.println("SubscriptionService: Subscription saved with ID: " + subscription.getId());
+            
+        } catch (Exception e) {
+            System.err.println("SubscriptionService: Error in createOrUpdateCompanySubscription: " + e.getMessage());
+            e.printStackTrace();
+            throw e;
         }
+    }
+    
+    private Company createCompanyFromEmail(String email) {
+        Company company = new Company();
+        company.setName("Company for " + email);
+        company.setEmail(email);
+        company.setStatus(CompanyStatus.PENDING);
+        company.setSubscriptionStatus(SubscriptionStatus.TRIAL);
+        company.setCustomFields("{}");
         
-        subscriptionRepository.save(subscription);
+        company = companyRepository.save(company);
+        System.out.println("SubscriptionService: Created new company with ID: " + company.getId());
+        return company;
     }
     
     public boolean hasActiveSubscription(String userEmail) {

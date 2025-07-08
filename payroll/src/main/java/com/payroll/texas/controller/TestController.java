@@ -1,8 +1,13 @@
 package com.payroll.texas.controller;
 
+import com.payroll.texas.model.Company;
+import com.payroll.texas.model.CompanySubscription;
+import com.payroll.texas.repository.CompanyRepository;
+import com.payroll.texas.repository.CompanySubscriptionRepository;
 import com.payroll.texas.repository.PlanRepository;
 import com.payroll.texas.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/test")
@@ -22,6 +28,12 @@ public class TestController {
     
     @Autowired
     private SubscriptionService subscriptionService;
+
+    @Autowired
+    private CompanyRepository companyRepository;
+
+    @Autowired
+    private CompanySubscriptionRepository subscriptionRepository;
 
     @GetMapping
     public String test() {
@@ -110,5 +122,51 @@ public class TestController {
             response.put("error", e.toString());
         }
         return response;
+    }
+
+    @PostMapping("/test-plan-selection")
+    public ResponseEntity<Map<String, Object>> testPlanSelection(@RequestBody Map<String, String> request) {
+        Map<String, Object> response = new HashMap<>();
+        try {
+            String email = request.get("email");
+            String planName = request.get("planName");
+            
+            if (email == null || planName == null) {
+                response.put("error", "Email and planName are required");
+                return ResponseEntity.badRequest().body(response);
+            }
+            
+            System.out.println("TestController: Testing plan selection for email: " + email + ", plan: " + planName);
+            
+            // Test plan selection
+            subscriptionService.updateCompanySubscriptionStatusByEmail(email, planName);
+            
+            // Get debug info
+            Optional<Company> companyOpt = companyRepository.findByEmail(email);
+            if (companyOpt.isPresent()) {
+                Company company = companyOpt.get();
+                response.put("companyId", company.getId());
+                response.put("companyName", company.getName());
+                response.put("subscriptionStatus", company.getSubscriptionStatus());
+                response.put("customFields", company.getCustomFields());
+                
+                Optional<CompanySubscription> subscriptionOpt = subscriptionRepository.findByCompanyId(company.getId());
+                if (subscriptionOpt.isPresent()) {
+                    CompanySubscription subscription = subscriptionOpt.get();
+                    response.put("subscriptionId", subscription.getId());
+                    response.put("subscriptionStatus", subscription.getStatus());
+                    response.put("planName", subscription.getPlan() != null ? subscription.getPlan().getName() : "null");
+                }
+            }
+            
+            response.put("success", true);
+            response.put("message", "Plan selection test completed successfully");
+            
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            response.put("error", e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body(response);
+        }
     }
 } 
