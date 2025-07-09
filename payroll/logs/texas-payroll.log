@@ -1,1 +1,381 @@
 2025-07-09 01:12:06.483 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7h27m58s989ms469µs800ns).
+2025-07-09 09:59:30.115 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h47m28s780ms108µs600ns).
+2025-07-09 10:02:01.874 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:02:01.876 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:02:01.914 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:02:01.915 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-09 10:02:01.923 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-09 10:02:01.927 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:02:01.931 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:02:01.931 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:02:01.931 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-09 10:02:01.931 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-09 10:08:06.720 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:08:06.724 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:08:06.725 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:08:06.725 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-09 10:08:06.738 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-09 10:08:06.741 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:08:06.745 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:08:06.746 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:08:06.746 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-09 10:08:06.760 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-09 10:08:08.377 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:08:08.379 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:08:08.379 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:08:08.380 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-09 10:08:08.384 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-09 10:08:10.000 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:08:10.000 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:08:10.000 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:08:10.000 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-09 10:08:10.000 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-09 10:08:11.460 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:08:11.460 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:08:11.460 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:08:11.460 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:08:11.466 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:01.034 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:01.038 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:01.038 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:01.038 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:01.041 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:01.880 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:01.884 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:01.884 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:01.884 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:01.887 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:02.760 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:02.765 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:02.765 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:02.765 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:02.770 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:03.182 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:03.185 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:03.185 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:03.185 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:03.188 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:03.416 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:03.420 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:03.421 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:03.421 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:03.426 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:03.873 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:03.876 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:03.876 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:03.876 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:03.879 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:04.120 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:04.120 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:04.120 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:04.120 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:04.126 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:04.335 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:04.337 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:04.337 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:04.337 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:04.340 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:04.886 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:04.889 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:04.890 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:04.890 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:04.891 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:13:05.063 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:13:05.067 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-09 10:13:05.067 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-09 10:13:05.067 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-09 10:13:05.068 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2
+2025-07-09 10:23:35.094 [http-nio-8080-exec-5] INFO  c.p.texas.service.SignupService - Signup attempt for email: user6@gmail.com
+2025-07-09 10:23:35.411 [http-nio-8080-exec-5] INFO  c.p.texas.service.SignupService - Signup successful for user: user6@gmail.com (ID: 10)
+2025-07-09 10:24:15.785 [http-nio-8080-exec-1] INFO  c.payroll.texas.service.AuthService - Login attempt for email: user6@gmail.com
+2025-07-09 10:24:16.116 [http-nio-8080-exec-1] INFO  c.payroll.texas.service.AuthService - Login successful for user: user6@gmail.com (ID: 10)
+2025-07-09 10:24:16.123 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present]
+2025-07-09 10:25:49.031 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:25:49.033 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:25:49.035 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:25:49.035 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:25:49.040 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 11 and status ACTIVE
+2025-07-09 10:25:49.043 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:25:49.046 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:25:49.046 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:25:49.047 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:25:49.050 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 11 and status ACTIVE
+2025-07-09 10:28:43.674 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:43.674 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:43.762 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Saving employee: user1@email.com
+2025-07-09 10:28:43.762 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-09 10:28:43.762 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Bank account encryption temporarily disabled for testing
+2025-07-09 10:28:43.762 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Bank routing encryption temporarily disabled for testing
+2025-07-09 10:28:43.780 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Employee saved successfully with ID: 3
+2025-07-09 10:28:43.780 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:28:43.780 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:43.780 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:43.780 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:28:43.780 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 10:28:47.455 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 3
+2025-07-09 10:28:47.457 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 3
+2025-07-09 10:28:47.459 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: user1@email.com
+2025-07-09 10:28:47.459 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 3
+2025-07-09 10:28:47.522 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 3
+2025-07-09 10:28:47.522 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 3
+2025-07-09 10:28:47.525 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: user1@email.com
+2025-07-09 10:28:47.525 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 3
+2025-07-09 10:28:47.549 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-09 10:28:47.549 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-09 10:28:47.549 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-09 10:28:47.549 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-09 10:28:51.019 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:28:51.022 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:51.024 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:51.025 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:28:51.027 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 10:28:51.027 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:28:51.027 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:51.027 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:51.027 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:28:51.043 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 10:28:53.654 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:28:53.655 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:53.655 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:53.655 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: INACTIVE
+2025-07-09 10:28:53.662 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 11 and status INACTIVE
+2025-07-09 10:28:56.259 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:28:56.261 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:56.261 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:56.264 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: TERMINATED
+2025-07-09 10:28:56.266 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 11 and status TERMINATED
+2025-07-09 10:28:58.444 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:28:58.448 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:28:58.448 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:28:58.448 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11
+2025-07-09 10:28:58.448 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11
+2025-07-09 10:30:33.557 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:30:33.587 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:30:33.587 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:30:33.587 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:30:33.600 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 10:30:33.602 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 10:30:33.606 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 10:30:33.606 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 10:30:33.607 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 10:30:33.612 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 10:41:33.514 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m1s798ms332µs700ns).
+2025-07-09 11:01:11.555 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s771ms169µs100ns).
+2025-07-09 11:47:50.873 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 11:47:50.900 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 11:47:50.900 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 11:47:50.903 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 11:47:50.915 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 11:47:50.918 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 11:47:50.920 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 11:47:50.920 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 11:47:50.921 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 11:47:50.924 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 11:48:28.067 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 11:48:28.073 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 11:48:28.073 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 11:48:28.074 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 11:48:28.078 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 11:48:28.081 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 11:48:28.083 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 11:48:28.083 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 11:48:28.083 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 11:48:28.086 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:07:32.949 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:07:32.952 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:07:32.952 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:07:32.952 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:07:32.959 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:07:32.960 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:07:32.963 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:07:32.963 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:07:32.963 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:07:32.970 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:08:22.574 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:08:22.577 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:08:22.578 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:08:22.578 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:08:22.581 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:08:22.583 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:08:22.585 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:08:22.586 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:08:22.586 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:08:22.589 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:13:22.428 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:13:22.429 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:13:22.430 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:13:22.430 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:13:22.437 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:13:22.439 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:13:22.441 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:13:22.442 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:13:22.442 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:13:22.444 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:14:51.627 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:14:51.630 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:14:51.631 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:14:51.631 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:14:51.638 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 12:14:51.641 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 12:14:51.643 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 12:14:51.643 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 12:14:51.643 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 12:14:51.646 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:02:51.077 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h6m37s851ms489µs500ns).
+2025-07-09 14:41:55.926 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m34s662ms475µs600ns).
+2025-07-09 14:42:03.060 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:42:03.086 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:42:03.086 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:42:03.086 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:42:03.100 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:42:03.104 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:42:03.104 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:42:03.104 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:42:03.104 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:42:03.108 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:49:24.343 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m28s320ms50µs100ns).
+2025-07-09 14:55:12.731 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:55:12.735 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:55:12.736 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:55:12.736 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:55:12.747 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:55:12.750 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:55:12.752 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:55:12.755 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:55:12.755 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:55:12.757 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:58:16.336 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:58:16.338 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:58:16.338 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:58:16.338 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:58:16.353 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:58:16.356 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:58:16.356 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:58:16.356 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:58:16.356 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:58:16.368 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:59:20.280 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:59:20.289 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:59:20.290 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:59:20.290 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:59:20.291 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 14:59:20.295 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 14:59:20.297 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 14:59:20.297 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 14:59:20.297 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 14:59:20.297 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:01:26.225 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:01:26.233 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:01:26.233 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:01:26.233 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:01:26.233 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:01:26.243 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:01:26.246 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:01:26.247 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:01:26.247 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:01:26.253 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:34:46.161 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:34:46.161 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:34:46.161 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:34:46.161 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:34:46.177 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:34:46.177 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:34:46.177 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:34:46.177 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:34:46.177 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:34:46.185 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:51:20.269 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:51:20.272 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:51:20.273 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:51:20.273 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:51:20.278 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:51:20.278 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:51:20.284 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:51:20.284 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:51:20.284 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:51:20.288 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:51:52.731 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:51:52.739 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:51:52.739 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:51:52.739 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:51:52.748 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:51:52.751 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:51:52.751 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:51:52.751 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:51:52.751 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:51:52.755 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:51:55.171 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:51:55.172 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:51:55.172 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:51:55.174 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:51:55.179 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:51:55.181 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:51:55.183 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:51:55.184 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:51:55.184 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:51:55.186 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:56:11.497 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:56:11.503 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:56:11.503 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:56:11.503 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:56:11.520 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:58:49.683 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:58:49.687 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:58:49.687 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:58:49.687 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:58:49.699 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 15:58:49.699 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 15:58:49.699 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 15:58:49.699 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 15:58:49.699 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 15:58:49.714 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:00:45.495 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:00:45.495 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:00:45.495 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:00:45.506 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:00:45.515 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:01:03.985 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:01:03.989 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:01:03.989 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:01:03.989 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:01:04.000 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:01:04.003 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:01:04.007 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:01:04.007 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:01:04.007 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:01:04.011 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:03:57.980 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:03:57.984 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:03:57.984 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:03:57.984 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:03:57.989 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:03:57.994 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:03:57.997 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:03:57.997 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:03:58.001 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:03:58.005 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:05:50.493 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:05:50.493 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:05:50.493 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:05:50.493 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:05:50.493 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:06:34.721 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:06:34.723 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:06:34.725 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:06:34.725 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:06:34.731 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:06:34.735 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:06:34.737 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:06:34.737 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:06:34.737 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:06:34.738 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:10:45.273 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:10:45.273 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:10:45.276 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:10:45.276 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:10:45.279 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
+2025-07-09 16:10:45.281 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-09 16:10:45.281 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 10
+2025-07-09 16:10:45.284 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company company6 for user 10
+2025-07-09 16:10:45.285 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 11 and status: ACTIVE
+2025-07-09 16:10:45.287 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 11 and status ACTIVE
