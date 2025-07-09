@@ -174,6 +174,7 @@ public class EmployeeController {
     // Add new employee with company
     @PostMapping("/addemployee-with-company")
     public ResponseEntity<?> addEmployeeWithCompany(@RequestBody java.util.Map<String, Object> payload, @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to add employee with company. Payload keys: {}", payload.keySet());
         try {
             // Extract user info from JWT token
             String token = authHeader.substring(7); // Remove "Bearer "
@@ -196,9 +197,11 @@ public class EmployeeController {
             // Extract employee data from payload
             Object employeeObj = payload.get("employee");
             if (employeeObj == null) {
+                logger.error("Employee data is missing from payload");
                 return ResponseEntity.badRequest().body(java.util.Map.of("error", "Employee data is required"));
             }
 
+            logger.info("Converting employee object to Employee entity...");
             // Convert employeeObj to Employee, with JavaTimeModule for LocalDate
             com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
             mapper.registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());
@@ -207,6 +210,7 @@ public class EmployeeController {
             // Set company from authenticated user context
             employee.setCompany(company);
 
+            logger.info("Saving employee: {} {}", employee.getFirstName(), employee.getLastName());
             Employee savedEmployee = employeeService.saveEmployee(employee);
             java.util.Map<String, Object> response = new java.util.HashMap<>();
             response.put("id", savedEmployee.getId());
@@ -217,7 +221,7 @@ public class EmployeeController {
             response.put("message", "Employee created successfully");
             return new ResponseEntity<>(response, HttpStatus.CREATED);
         } catch (Exception e) {
-            logger.error("Error adding employee with company: {}", e.getMessage());
+            logger.error("Error adding employee with company: {}", e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(java.util.Map.of("error", e.getMessage()));
         }
     }
