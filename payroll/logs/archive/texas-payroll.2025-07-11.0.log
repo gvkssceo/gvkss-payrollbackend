@@ -1,0 +1,415 @@
+2025-07-11 10:30:17.449 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 3948 (C:\Users\HP\OneDrive\Desktop\texaspayrollgvkss\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\OneDrive\Desktop\texaspayrollgvkss\gvkss-payrollbackend\payroll)
+2025-07-11 10:30:17.458 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-11 10:30:17.549 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-11 10:30:17.549 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-11 10:30:20.162 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-11 10:30:20.269 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2719 ms
+2025-07-11 10:30:21.129 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-11 10:30:21.358 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-11 10:30:21.365 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-11 10:30:22.372 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-11 10:30:25.794 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-11 10:30:26.004 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-11 10:30:26.726 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-11 10:30:26.795 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-11 10:30:26.817 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 10.572 seconds (process running for 12.069)
+2025-07-11 10:40:22.789 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m1s445ms932µs).
+2025-07-11 10:40:48.801 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-11 10:40:48.801 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-07-11 10:40:48.964 [http-nio-8080-exec-2] INFO  c.payroll.texas.service.AuthService - Login attempt for email: venkat@gvkss.com
+2025-07-11 10:40:49.730 [http-nio-8080-exec-2] INFO  c.payroll.texas.service.AuthService - Login successful for user: venkat@gvkss.com (ID: 2)
+2025-07-11 10:40:49.951 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingRequestHeaderException: Required request header 'Authorization' for method parameter type String is not present]
+2025-07-11 10:40:52.893 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 10:40:52.898 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 10:40:52.898 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 10:40:52.912 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 10:40:52.942 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-11 10:40:52.955 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 10:40:52.976 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 10:40:52.976 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 10:40:52.976 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 10:40:52.996 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-11 10:49:24.541 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to add employee with company. Payload keys: [employee]
+2025-07-11 10:49:24.554 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 10:49:24.556 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 10:49:24.556 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Converting employee object to Employee entity...
+2025-07-11 10:49:24.608 [http-nio-8080-exec-4] ERROR c.p.t.controller.EmployeeController - Error adding employee with company: Cannot deserialize value of type `com.payroll.texas.model.EmployeeStatus` from String "INCOMPLETE": not one of the values accepted for Enum class: [INACTIVE, ACTIVE, ON_LEAVE, TERMINATED]
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.payroll.texas.model.Employee["status"])
+java.lang.IllegalArgumentException: Cannot deserialize value of type `com.payroll.texas.model.EmployeeStatus` from String "INCOMPLETE": not one of the values accepted for Enum class: [INACTIVE, ACTIVE, ON_LEAVE, TERMINATED]
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.payroll.texas.model.Employee["status"])
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4663)
+	at com.fasterxml.jackson.databind.ObjectMapper.convertValue(ObjectMapper.java:4594)
+	at com.payroll.texas.controller.EmployeeController.addEmployeeWithCompany(EmployeeController.java:208)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `com.payroll.texas.model.EmployeeStatus` from String "INCOMPLETE": not one of the values accepted for Enum class: [INACTIVE, ACTIVE, ON_LEAVE, TERMINATED]
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: com.payroll.texas.model.Employee["status"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1986)
+	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1272)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:446)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._fromString(EnumDeserializer.java:303)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:272)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:129)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:302)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:169)
+	at com.fasterxml.jackson.databind.ObjectMapper._convert(ObjectMapper.java:4658)
+	... 52 common frames omitted
+2025-07-11 10:58:38.646 [RMI TCP Connection(42)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-11 10:58:38.653 [RMI TCP Connection(42)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-11 10:58:38.907 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-11 10:58:43.053 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 3764 (C:\Users\HP\OneDrive\Desktop\texaspayrollgvkss\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\OneDrive\Desktop\texaspayrollgvkss\gvkss-payrollbackend\payroll)
+2025-07-11 10:58:43.058 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-11 10:58:43.152 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-11 10:58:43.153 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-11 10:58:45.388 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-11 10:58:45.482 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2328 ms
+2025-07-11 10:58:46.128 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-11 10:58:46.442 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-11 10:58:46.447 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-11 10:58:47.196 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-11 10:58:50.154 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-11 10:58:50.346 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-11 10:58:50.868 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-11 10:58:50.930 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-11 10:58:50.948 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 9.118 seconds (process running for 10.323)
+2025-07-11 10:59:45.323 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-11 10:59:45.326 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-11 10:59:45.456 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to add employee with company. Payload keys: [employee]
+2025-07-11 10:59:45.828 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 10:59:45.848 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 10:59:45.875 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Converting employee object to Employee entity...
+2025-07-11 10:59:45.947 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Saving employee: abhi yellanki
+2025-07-11 10:59:45.947 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Saving employee: abhi@gmail.com
+2025-07-11 10:59:45.949 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-11 10:59:45.949 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Bank account encryption temporarily disabled for testing
+2025-07-11 10:59:45.949 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Bank routing encryption temporarily disabled for testing
+2025-07-11 10:59:46.031 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Employee saved successfully with ID: 11
+2025-07-11 10:59:46.079 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 10:59:46.098 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 10:59:46.098 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 10:59:46.098 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 10:59:46.169 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:03.260 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:03.274 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:03.274 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:03.280 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:03.307 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:04.721 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:04.737 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:04.737 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:04.740 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:04.743 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:05.623 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:05.634 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:05.637 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:05.639 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:05.646 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:10.964 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:10.980 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:10.982 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:10.983 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:10.988 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:11.928 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:11.940 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:11.940 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:11.940 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:11.955 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:15.382 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:15.393 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:15.397 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:15.400 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:15.407 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:16.391 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:16.402 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:16.403 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:16.404 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:16.415 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:17.239 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:17.243 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:17.243 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:17.243 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:17.263 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:18.462 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:18.474 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:18.474 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:18.474 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:18.490 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:19.614 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:19.623 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:19.624 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:19.625 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:19.637 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:21.208 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:21.216 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:21.216 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:21.216 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:21.227 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:21.931 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:21.941 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:21.941 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:21.941 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:21.950 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:22.592 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:22.604 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:22.604 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:22.604 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:22.615 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:24.161 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:24.173 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:24.176 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:24.179 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:24.188 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:25.748 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:25.758 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:25.760 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:25.761 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:25.776 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:26.615 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:26.626 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:26.628 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:26.628 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:26.637 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:27.562 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:27.573 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:27.574 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:27.575 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:27.580 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:28.108 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:28.115 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:28.115 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:28.115 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:28.127 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:29.149 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:29.156 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:29.161 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:29.163 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:29.175 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:29.709 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:29.713 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:29.713 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:29.713 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:29.729 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:29.774 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:29.787 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:29.789 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:29.789 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:29.794 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:30.638 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:30.646 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:30.646 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:30.649 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:30.653 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:31.865 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:31.873 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:31.873 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:31.873 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:31.886 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:32.874 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:32.879 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:32.883 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:32.884 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:32.888 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:34.176 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:34.182 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:34.182 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:34.182 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:34.190 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:34.778 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:34.787 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:34.787 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:34.787 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:34.798 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:35.583 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:35.587 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:35.587 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:35.587 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:35.605 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:36.684 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:36.690 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:36.695 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:36.696 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:36.701 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:37.430 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:37.438 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:37.438 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:37.438 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:37.446 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:38.019 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:38.029 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:38.029 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:38.031 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:38.038 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:38.589 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:38.596 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:38.596 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:38.596 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:38.611 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:39.815 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:39.815 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:39.815 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:39.825 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:39.833 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:00:41.511 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:41.511 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:41.519 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:41.520 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:00:41.526 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:00:42.096 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:42.101 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:42.101 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:42.101 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:00:42.108 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:00:44.781 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:44.791 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:44.792 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:44.792 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2
+2025-07-11 11:00:44.805 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2
+2025-07-11 11:00:46.230 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:00:46.238 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:00:46.238 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:00:46.240 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:00:46.249 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:01:02.365 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:02.372 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:02.372 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:02.372 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:01:02.381 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:01:03.995 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:04.002 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:04.002 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:04.004 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:01:04.008 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:01:05.325 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:05.327 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:05.332 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:05.332 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:01:05.342 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 11:01:25.368 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:25.377 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:25.378 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:25.378 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:01:25.387 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:01:26.463 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:26.475 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:26.475 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:26.477 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 11:01:26.489 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 11:01:28.230 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:28.236 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:28.236 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:28.241 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 11:01:28.247 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 11:01:29.336 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 11:01:29.344 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 11:01:29.344 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 11:01:29.345 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 11:01:29.357 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 12:03:34.538 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=51m48s84ms369µs100ns).
+2025-07-11 12:08:33.215 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m58s654ms775µs500ns).
+2025-07-11 12:16:59.882 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56s567ms872µs).
+2025-07-11 12:21:09.915 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m9s991ms815µs800ns).
+2025-07-11 12:21:35.635 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 12:21:35.644 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 12:21:35.644 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 12:21:35.644 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 12:21:35.669 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 12:21:35.688 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 12:21:35.703 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 12:21:35.704 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 12:21:35.704 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 12:21:35.735 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 12:21:37.258 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 12:21:37.264 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 12:21:37.265 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 12:21:37.265 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-11 12:21:37.281 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-11 12:21:38.192 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 12:21:38.192 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 12:21:38.198 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 12:21:38.198 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-11 12:21:38.207 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-11 12:21:39.033 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-11 12:21:39.037 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-11 12:21:39.037 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Gvkss for user 2
+2025-07-11 12:21:39.037 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-11 12:21:39.049 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 4 employees for company 2 and status ACTIVE
+2025-07-11 12:23:41.333 [RMI TCP Connection(44)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-11 12:23:41.333 [RMI TCP Connection(44)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-11 12:23:41.635 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-11 12:25:02.090 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 14132 (C:\Users\HP\OneDrive\Desktop\texaspayrollgvkss\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\OneDrive\Desktop\texaspayrollgvkss\gvkss-payrollbackend\payroll)
+2025-07-11 12:25:02.095 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-11 12:25:02.272 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-11 12:25:02.273 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-11 12:25:05.350 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-11 12:25:05.457 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3182 ms
+2025-07-11 12:25:06.452 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-11 12:25:06.689 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-11 12:25:06.698 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-11 12:25:07.756 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-11 12:25:11.354 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-11 12:25:11.618 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-11 12:25:12.303 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-11 12:25:12.381 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-11 12:25:12.405 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 11.647 seconds (process running for 13.112)
+2025-07-11 12:42:23.324 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m16s614ms990µs700ns).
+2025-07-11 14:22:28.148 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h32m34s809ms555µs800ns).
+2025-07-11 14:59:48.382 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s81ms654µs).
+2025-07-11 15:12:38.523 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m20s62ms217µs900ns).
+2025-07-11 15:33:41.008 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m2s210ms368µs).
+2025-07-11 16:14:42.075 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m619ms159µs500ns).
+2025-07-11 16:24:44.957 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m2s756ms471µs).
+2025-07-11 16:38:04.357 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m19s336ms77µs800ns).
+2025-07-11 17:16:21.003 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m46s525ms172µs100ns).
+2025-07-11 18:03:46.996 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m25s961ms389µs600ns).
+2025-07-11 18:12:09.246 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m52s220ms354µs).
+2025-07-11 19:16:53.804 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m44s501ms576µs800ns).
+2025-07-11 20:20:24.858 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m1s18ms627µs100ns).

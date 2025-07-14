@@ -17,7 +17,7 @@ ALTER TABLE users ALTER COLUMN status TYPE VARCHAR(50);
 ALTER TABLE users ADD CONSTRAINT chk_user_status CHECK (status IN ('ACTIVE', 'INACTIVE', 'PENDING', 'SUSPENDED'));
 
 ALTER TABLE employees ALTER COLUMN status TYPE VARCHAR(50);
-ALTER TABLE employees ADD CONSTRAINT chk_employee_status CHECK (status IN ('ACTIVE', 'INACTIVE', 'TERMINATED', 'INCOMPLETE'));
+ALTER TABLE employees ADD CONSTRAINT chk_employee_status CHECK (status IN ('ACTIVE', 'INACTIVE'));
 
 ALTER TABLE employees ALTER COLUMN employee_type TYPE VARCHAR(50);
 ALTER TABLE employees ADD CONSTRAINT chk_employee_type CHECK (employee_type IN ('EMPLOYEE', 'CONTRACTOR', 'INTERN'));

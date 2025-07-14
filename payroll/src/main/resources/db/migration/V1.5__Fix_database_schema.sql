@@ -29,7 +29,7 @@ BEGIN
     END IF;
     
     IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'employee_status') THEN
-        CREATE TYPE employee_status AS ENUM ('ACTIVE', 'INACTIVE', 'TERMINATED', 'INCOMPLETE');
+        CREATE TYPE employee_status AS ENUM ('ACTIVE', 'INACTIVE');
     END IF;
     
     IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'compensation_type') THEN
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS employees (
     email VARCHAR(255),
     phone VARCHAR(20),
     employee_type employee_type NOT NULL,
-    status employee_status DEFAULT 'INCOMPLETE',
+    status employee_status DEFAULT 'ACTIVE',
     ssn_encrypted VARCHAR(255),
     ssn_encrypted_iv VARCHAR(255),
     date_of_birth DATE,

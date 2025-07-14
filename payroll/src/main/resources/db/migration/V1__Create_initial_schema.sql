@@ -5,7 +5,7 @@ CREATE TYPE company_status AS ENUM ('ACTIVE', 'INACTIVE', 'PENDING', 'SUSPENDED'
 CREATE TYPE subscription_status AS ENUM ('ACTIVE', 'TRIAL', 'EXPIRED', 'CANCELLED');
 CREATE TYPE enrollment_step AS ENUM ('INITIAL', 'COMPANY_INFO', 'PLAN_SELECTION', 'ACCOUNT_CREATION', 'COMPLETED');
 CREATE TYPE employee_type AS ENUM ('EMPLOYEE', 'CONTRACTOR', 'INTERN');
-CREATE TYPE employee_status AS ENUM ('ACTIVE', 'INACTIVE', 'TERMINATED', 'INCOMPLETE');
+CREATE TYPE employee_status AS ENUM ('ACTIVE', 'INACTIVE');
 CREATE TYPE compensation_type AS ENUM ('HOURLY', 'SALARY', 'COMMISSION');
 CREATE TYPE pay_frequency AS ENUM ('WEEKLY', 'BI_WEEKLY', 'SEMI_MONTHLY', 'MONTHLY');
 CREATE TYPE billing_cycle AS ENUM ('MONTHLY', 'YEARLY');
@@ -140,7 +140,7 @@ CREATE TABLE employees (
     email VARCHAR(255),
     phone VARCHAR(20),
     employee_type employee_type NOT NULL,
-    status employee_status DEFAULT 'INCOMPLETE',
+    status employee_status DEFAULT 'ACTIVE',
     
     -- Encrypted Sensitive Data (Static - Security Requirements)
     ssn_encrypted VARCHAR(255),
