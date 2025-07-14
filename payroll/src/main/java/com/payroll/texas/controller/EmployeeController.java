@@ -45,18 +45,15 @@ public class EmployeeController {
         try {
             Employee savedEmployee = employeeService.saveEmployee(employee);
             logger.info("Successfully added employee with ID: {}", savedEmployee.getId());
-            
-            // Create a simple response DTO to avoid circular references
-            java.util.Map<String, Object> response = java.util.Map.of(
-                "id", savedEmployee.getId(),
-                "firstName", savedEmployee.getFirstName(),
-                "lastName", savedEmployee.getLastName(),
-                "email", savedEmployee.getEmail(),
-                "status", savedEmployee.getStatus(),
-                "message", "Employee created successfully"
-            );
-            
-            return new ResponseEntity<>(response, HttpStatus.CREATED);
+            java.util.Map<String, Object> dto = new java.util.HashMap<>();
+            dto.put("id", savedEmployee.getId());
+            dto.put("employeeId", savedEmployee.getEmployeeId());
+            dto.put("firstName", savedEmployee.getFirstName());
+            dto.put("lastName", savedEmployee.getLastName());
+            dto.put("email", savedEmployee.getEmail());
+            dto.put("status", savedEmployee.getStatus());
+            dto.put("message", "Employee created successfully");
+            return new ResponseEntity<>(dto, HttpStatus.CREATED);
         } catch (Exception e) {
             logger.error("Error adding employee: {}", e.getMessage());
             return new ResponseEntity<>(java.util.Map.of("error", e.getMessage()), HttpStatus.BAD_REQUEST);
@@ -103,6 +100,7 @@ public class EmployeeController {
                     .map(emp -> {
                         java.util.Map<String, Object> dto = new java.util.HashMap<>();
                         dto.put("id", emp.getId());
+                        dto.put("employeeId", emp.getEmployeeId());
                         dto.put("firstName", emp.getFirstName());
                         dto.put("lastName", emp.getLastName());
                         dto.put("email", emp.getEmail());
@@ -111,7 +109,6 @@ public class EmployeeController {
                         dto.put("status", emp.getStatus());
                         dto.put("employeeType", emp.getEmployeeType());
                         dto.put("hireDate", emp.getHireDate());
-                        // Add companyId for debugging
                         dto.put("companyId", emp.getCompany() != null ? emp.getCompany().getId() : null);
                         return dto;
                     })
@@ -126,13 +123,51 @@ public class EmployeeController {
 
     // Get employee by ID
     @GetMapping("/getemployee/{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id) {
+    public ResponseEntity<?> getEmployeeById(@PathVariable Long id) {
         logger.info("Received request to get employee with ID: {}", id);
         try {
-            Optional<Employee> employee = employeeService.getEmployeeById(id);
-            if (employee.isPresent()) {
-                logger.info("Successfully retrieved employee with ID: {}", id);
-                return new ResponseEntity<>(employee.get(), HttpStatus.OK);
+            Optional<Employee> employeeOpt = employeeService.getEmployeeById(id);
+            if (employeeOpt.isPresent()) {
+                Employee emp = employeeOpt.get();
+                java.util.Map<String, Object> dto = new java.util.HashMap<>();
+                dto.put("id", emp.getId());
+                dto.put("employeeId", emp.getEmployeeId());
+                dto.put("firstName", emp.getFirstName());
+                dto.put("lastName", emp.getLastName());
+                dto.put("email", emp.getEmail());
+                dto.put("phone", emp.getPhone());
+                dto.put("jobTitle", emp.getJobTitle());
+                dto.put("status", emp.getStatus());
+                dto.put("employeeType", emp.getEmployeeType());
+                dto.put("hireDate", emp.getHireDate());
+                dto.put("terminationDate", emp.getTerminationDate());
+                dto.put("department", emp.getDepartment());
+                dto.put("compensationType", emp.getCompensationType());
+                dto.put("payFrequency", emp.getPayFrequency());
+                dto.put("federalTaxExemptions", emp.getFederalTaxExemptions());
+                dto.put("stateTaxExemptions", emp.getStateTaxExemptions());
+                dto.put("additionalFederalWithholding", emp.getAdditionalFederalWithholding());
+                dto.put("additionalStateWithholding", emp.getAdditionalStateWithholding());
+                dto.put("bankName", emp.getBankName());
+                dto.put("accountType", emp.getAccountType());
+                dto.put("hourlyRate", emp.getHourlyRate());
+                dto.put("salary", emp.getSalary());
+                dto.put("standardHours", emp.getStandardHours());
+                dto.put("addressLine1", emp.getAddressLine1());
+                dto.put("addressLine2", emp.getAddressLine2());
+                dto.put("city", emp.getCity());
+                dto.put("state", emp.getState());
+                dto.put("zipCode", emp.getZipCode());
+                dto.put("taxFilingStatus", emp.getTaxFilingStatus());
+                dto.put("dependents", emp.getDependents());
+                dto.put("isExempt", emp.getIsExempt());
+                dto.put("createdAt", emp.getCreatedAt());
+                dto.put("updatedAt", emp.getUpdatedAt());
+                dto.put("companyId", emp.getCompany() != null ? emp.getCompany().getId() : null);
+                dto.put("companyName", emp.getCompany() != null ? emp.getCompany().getName() : null);
+                dto.put("ssn", emp.getSsn());
+                dto.put("dateOfBirth", emp.getDateOfBirth());
+                return new ResponseEntity<>(dto, HttpStatus.OK);
             } else {
                 logger.warn("Employee not found with ID: {}", id);
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -145,15 +180,23 @@ public class EmployeeController {
 
     // Update employee
     @PutMapping("/updateemployee/{id}")
-    public ResponseEntity<Employee> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
+    public ResponseEntity<?> updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {
         logger.info("Received request to update employee with ID: {}", id);
         try {
             Employee updatedEmployee = employeeService.updateEmployee(id, employee);
             logger.info("Successfully updated employee with ID: {}", id);
-            return new ResponseEntity<>(updatedEmployee, HttpStatus.OK);
+            java.util.Map<String, Object> dto = new java.util.HashMap<>();
+            dto.put("id", updatedEmployee.getId());
+            dto.put("employeeId", updatedEmployee.getEmployeeId());
+            dto.put("firstName", updatedEmployee.getFirstName());
+            dto.put("lastName", updatedEmployee.getLastName());
+            dto.put("email", updatedEmployee.getEmail());
+            dto.put("status", updatedEmployee.getStatus());
+            dto.put("message", "Employee updated successfully");
+            return new ResponseEntity<>(dto, HttpStatus.OK);
         } catch (Exception e) {
             logger.error("Error updating employee with ID {}: {}", id, e.getMessage());
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(java.util.Map.of("error", e.getMessage()), HttpStatus.BAD_REQUEST);
         }
     }
 
@@ -214,6 +257,7 @@ public class EmployeeController {
             Employee savedEmployee = employeeService.saveEmployee(employee);
             java.util.Map<String, Object> response = new java.util.HashMap<>();
             response.put("id", savedEmployee.getId());
+            response.put("employeeId", savedEmployee.getEmployeeId());
             response.put("firstName", savedEmployee.getFirstName());
             response.put("lastName", savedEmployee.getLastName());
             response.put("email", savedEmployee.getEmail());

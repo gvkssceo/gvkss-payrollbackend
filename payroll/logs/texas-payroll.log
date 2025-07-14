@@ -413,3 +413,1238 @@ Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot des
 2025-07-11 18:12:09.246 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m52s220ms354µs).
 2025-07-11 19:16:53.804 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m44s501ms576µs800ns).
 2025-07-11 20:20:24.858 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m1s18ms627µs100ns).
+2025-07-14 10:16:04.687 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 8004 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 10:16:04.689 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 10:16:04.727 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-14 10:16:04.727 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-14 10:16:06.337 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 10:16:06.396 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1667 ms
+2025-07-14 10:16:07.078 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 10:16:07.229 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 10:16:07.233 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 10:16:07.810 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 10:16:09.741 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 10:16:09.845 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 10:16:10.190 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 10:16:10.230 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 10:16:10.241 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 6.182 seconds (process running for 6.901)
+2025-07-14 10:19:28.042 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 10:19:28.042 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-07-14 10:19:44.088 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 10:19:44.096 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 10:19:44.097 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 10:19:44.116 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 10:19:44.142 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 10:19:44.157 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 10:19:44.166 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 10:19:44.167 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 10:19:44.168 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 10:19:44.187 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 10:32:35.932 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 10:32:35.938 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 10:32:35.939 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 10:32:35.940 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 10:32:35.948 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 10:32:35.953 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 10:32:35.962 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 10:32:35.962 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 10:32:35.963 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 10:32:35.976 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 10:41:41.931 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m4s461ms525µs900ns).
+2025-07-14 10:45:34.841 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 10:45:34.846 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 10:45:34.847 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 10:45:34.849 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 10:45:34.859 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 10:45:34.863 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 10:45:34.867 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 10:45:34.867 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 10:45:34.867 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 10:45:34.867 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:10:36.628 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:10:36.632 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:10:36.633 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:10:36.633 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:10:36.643 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:10:36.649 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:10:36.649 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:10:36.649 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:10:36.649 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:10:36.658 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:14:50.528 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:14:50.533 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:14:50.533 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:14:50.536 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:14:50.554 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:14:50.561 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:14:50.567 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:14:50.568 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:14:50.569 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:14:50.576 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:14:55.667 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:14:55.669 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:14:55.670 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:14:55.670 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:14:55.674 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:14:55.679 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:14:55.680 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:14:55.681 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:14:55.681 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:14:55.686 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:16:28.466 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:16:28.466 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:16:28.466 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:16:28.466 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:16:28.466 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:17:02.889 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:17:02.891 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:17:02.891 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:17:02.892 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:17:02.900 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:17:02.903 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:17:02.903 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:17:02.903 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:17:02.903 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:17:02.918 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:17:09.108 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:17:09.110 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:17:09.110 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:17:09.111 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:17:09.116 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:17:09.118 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:17:09.120 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:17:09.120 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:17:09.120 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:17:09.129 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:20:04.360 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:20:04.364 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:20:04.365 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:20:04.366 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:20:04.371 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:20:04.374 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:20:04.375 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:20:04.375 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:20:04.380 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:20:04.385 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:20:05.906 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:20:05.907 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:20:05.914 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:20:05.914 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:20:05.955 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:20:05.968 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:20:05.969 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:20:05.971 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:20:05.991 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:20:05.991 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:20:05.991 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:20:05.991 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:20:11.140 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:20:11.145 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:20:11.145 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:20:11.147 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:20:11.156 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:20:11.159 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:20:11.161 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:20:11.161 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:20:11.162 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:20:11.168 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:27:40.178 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:27:40.179 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:27:40.182 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:27:40.183 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:27:40.187 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:27:40.187 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:27:40.190 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:27:40.191 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:27:40.200 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:27:40.201 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:27:40.211 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:27:40.211 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:27:46.089 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:27:46.089 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:27:46.089 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:27:46.093 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:27:46.099 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:27:46.102 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:27:46.105 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:27:46.105 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:27:46.107 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:27:46.112 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:27:48.935 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:27:48.935 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:27:48.937 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:27:48.937 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:27:48.943 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:27:48.944 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:27:48.945 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:27:48.946 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:27:48.959 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:27:48.959 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:27:48.967 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:27:48.967 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:27:58.993 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:27:58.997 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:27:58.997 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:27:58.997 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:27:59.009 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:27:59.015 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:27:59.023 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:27:59.023 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:27:59.024 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:27:59.030 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:28:01.378 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:28:01.378 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:28:01.379 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:28:01.380 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:28:01.385 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:28:01.386 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:28:01.389 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:28:01.389 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:28:01.398 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:28:01.398 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:28:01.402 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:28:01.402 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:35:27.517 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:35:27.528 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:35:27.542 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:35:27.542 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:35:27.569 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:35:27.569 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:37:24.552 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:37:24.553 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:37:24.554 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:37:24.555 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:37:24.560 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:37:24.560 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:37:24.566 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:37:24.568 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:37:24.571 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:37:24.571 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:37:24.581 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:37:24.581 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:37:44.290 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:37:44.295 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:37:44.296 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:37:44.296 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:37:44.302 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:37:44.307 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:37:44.310 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:37:44.310 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:37:44.311 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:37:44.315 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:37:47.886 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:37:47.886 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:37:47.889 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:37:47.890 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:37:47.899 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 11:37:47.900 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 11:37:47.906 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:37:47.906 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:37:47.907 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 11:37:47.908 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 11:37:47.920 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 11:37:47.921 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 11:44:54.375 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:44:54.383 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:44:54.383 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:44:54.384 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:44:54.393 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 11:44:54.399 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 11:44:54.406 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 11:44:54.406 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 11:44:54.406 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 11:44:54.413 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:00:40.063 [RMI TCP Connection(114)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-14 12:00:40.089 [RMI TCP Connection(114)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 12:00:40.317 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 12:00:42.626 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 15288 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 12:00:42.629 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 12:00:42.666 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-14 12:00:42.667 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-14 12:00:43.835 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 12:00:43.926 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1259 ms
+2025-07-14 12:00:44.510 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 12:00:44.620 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 12:00:44.623 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 12:00:45.084 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 12:00:46.933 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 12:00:47.037 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 12:00:47.350 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 12:00:47.386 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 12:00:47.395 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 5.287 seconds (process running for 5.878)
+2025-07-14 12:00:55.188 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 12:00:55.190 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-14 12:00:55.797 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:00:55.811 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:00:55.812 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:00:55.841 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:00:55.866 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:00:55.878 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:00:55.884 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:00:55.885 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:00:55.886 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:00:55.898 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:01:04.324 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:01:04.330 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:01:04.331 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:01:04.332 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:01:04.342 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:01:04.347 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:01:04.357 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:01:04.357 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:01:04.358 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:01:04.364 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:01:06.699 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:01:06.699 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:01:06.708 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:01:06.709 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 12:01:06.761 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:01:06.761 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:01:06.764 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:01:06.765 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 12:01:06.791 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:01:06.791 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:01:06.791 [http-nio-8080-exec-9] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:01:06.791 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:02:54.698 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:02:54.698 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:02:54.698 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:02:54.709 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 12:02:54.734 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:02:54.734 [http-nio-8080-exec-7] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:02:54.740 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:02:54.741 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:02:54.752 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:02:54.753 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved employee with ID: 1
+2025-07-14 12:02:54.776 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:02:54.777 [http-nio-8080-exec-8] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:02:56.584 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:02:56.592 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:02:56.592 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:02:56.596 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:02:56.602 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:02:56.605 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:02:56.610 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:02:56.611 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:02:56.612 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:02:56.618 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:14:36.265 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 63 class path changes (0 additions, 62 deletions, 1 modification)
+2025-07-14 12:14:36.285 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 12:14:36.710 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 12:14:37.077 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 15288 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 12:14:37.077 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 12:14:38.219 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 12:14:38.265 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1174 ms
+2025-07-14 12:14:38.486 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 12:14:38.669 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 12:14:38.669 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 12:14:38.786 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 12:14:38.928 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 12:14:39.371 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 12:14:39.403 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 12:14:39.404 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 2.521 seconds (process running for 837.898)
+2025-07-14 12:14:39.419 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 12:14:42.532 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 59 class path changes (59 additions, 0 deletions, 0 modifications)
+2025-07-14 12:14:42.536 [Thread-7] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 12:14:43.073 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 12:14:43.309 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 15288 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 12:14:43.309 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 12:14:44.149 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 12:14:44.216 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 907 ms
+2025-07-14 12:14:44.498 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 12:14:44.877 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 12:14:44.883 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 12:14:45.005 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 12:14:46.203 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 12:14:46.494 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 12:14:46.804 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 12:14:46.865 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 12:14:46.911 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 3.712 seconds (process running for 845.393)
+2025-07-14 12:14:46.915 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 12:16:24.486 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 12:16:24.491 [http-nio-8080-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-07-14 12:16:24.515 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:16:24.552 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:16:24.555 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:16:24.556 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:16:24.562 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:18:38.050 [RMI TCP Connection(30)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-14 12:18:38.051 [RMI TCP Connection(30)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 12:18:38.335 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 12:18:40.609 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 18256 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 12:18:40.611 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 12:18:40.646 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-14 12:18:40.647 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-14 12:18:41.897 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 12:18:41.975 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1328 ms
+2025-07-14 12:18:42.557 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 12:18:42.687 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 12:18:42.693 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 12:18:43.227 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 12:18:44.994 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 12:18:45.098 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 12:18:45.403 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 12:18:45.436 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 12:18:45.444 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 5.337 seconds (process running for 6.005)
+2025-07-14 12:18:55.794 [http-nio-8080-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 12:18:55.796 [http-nio-8080-exec-4] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-14 12:18:56.379 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:18:56.386 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:18:56.388 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:18:56.409 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:18:56.436 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:18:56.451 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:18:56.463 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:18:56.465 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:18:56.467 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:18:56.477 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:18:59.330 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:18:59.331 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:18:59.339 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:18:59.354 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:18:59.355 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:18:59.358 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:21:45.773 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to update employee with ID: 1
+2025-07-14 12:21:45.774 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Updating employee with ID: 1
+2025-07-14 12:21:45.782 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Employee updated successfully: robb@stark.com
+2025-07-14 12:21:45.826 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully updated employee with ID: 1
+2025-07-14 12:21:45.891 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:21:45.891 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:30:01.986 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:30:01.988 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:30:01.994 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:30:02.043 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:30:02.043 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:30:02.074 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:30:05.441 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s620ms532µs400ns).
+2025-07-14 12:31:15.387 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to update employee with ID: 1
+2025-07-14 12:31:15.388 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Updating employee with ID: 1
+2025-07-14 12:31:15.392 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Employee updated successfully: robb@stark.com
+2025-07-14 12:31:15.408 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully updated employee with ID: 1
+2025-07-14 12:31:15.430 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:31:15.430 [http-nio-8080-exec-2] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:31:24.610 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to update employee with ID: 1
+2025-07-14 12:31:24.610 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Updating employee with ID: 1
+2025-07-14 12:31:24.620 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Employee updated successfully: robb@stark.com
+2025-07-14 12:31:24.643 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully updated employee with ID: 1
+2025-07-14 12:31:24.660 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:31:24.660 [http-nio-8080-exec-1] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 12:31:35.152 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:31:35.169 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:31:35.172 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:31:35.174 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:31:35.186 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:31:35.204 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:31:35.215 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:31:35.217 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:31:35.220 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:31:35.229 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:31:41.349 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:31:41.357 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:31:41.357 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:31:41.358 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:31:41.365 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:31:43.768 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:31:43.768 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:31:43.774 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:31:43.785 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:31:43.785 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:31:43.787 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:31:48.199 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:31:48.216 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:31:48.217 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:31:48.219 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:31:48.231 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:31:48.239 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 12:31:48.250 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 12:31:48.252 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 12:31:48.252 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 12:31:48.257 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 12:31:54.322 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:31:54.322 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:31:54.325 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:31:54.334 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 12:31:54.336 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 12:31:54.338 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 12:32:10.159 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to update employee with ID: 1
+2025-07-14 12:32:10.160 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Updating employee with ID: 1
+2025-07-14 12:32:10.164 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-14 12:32:10.164 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Employee updated successfully: robb@stark.com
+2025-07-14 12:32:10.184 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully updated employee with ID: 1
+2025-07-14 12:32:10.198 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2025-07-14 12:32:10.198 [http-nio-8080-exec-10] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2025-07-14 13:47:01.811 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h13m56s327ms179µs700ns).
+2025-07-14 13:58:20.942 [HikariPool-1:housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m19s130ms748µs200ns).
+2025-07-14 14:02:49.469 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:02:49.471 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:02:49.496 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:02:49.513 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:02:49.513 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:02:49.531 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:07:49.107 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 60 class path changes (0 additions, 59 deletions, 1 modification)
+2025-07-14 14:07:49.113 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 14:07:49.416 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 14:07:49.630 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 18256 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 14:07:49.631 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 14:07:50.259 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 14:07:50.278 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 647 ms
+2025-07-14 14:07:50.432 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 14:07:50.565 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 14:07:50.572 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 14:07:50.649 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 14:07:50.748 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 14:07:51.000 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 14:07:51.028 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 14:07:51.033 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 1.514 seconds (process running for 6551.597)
+2025-07-14 14:07:51.040 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 14:07:52.445 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 59 class path changes (59 additions, 0 deletions, 0 modifications)
+2025-07-14 14:07:52.445 [Thread-7] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 14:07:52.793 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 14:07:52.951 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 18256 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 14:07:52.951 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 14:07:53.536 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 14:07:53.556 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 605 ms
+2025-07-14 14:07:53.773 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 14:07:53.883 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 14:07:53.883 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 14:07:53.946 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 14:07:54.380 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 14:07:54.457 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 14:07:54.554 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 14:07:54.576 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 14:07:54.583 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 1.711 seconds (process running for 6555.145)
+2025-07-14 14:07:54.583 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 14:08:15.404 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 14:08:15.407 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-14 14:08:15.986 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:08:15.986 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:08:15.993 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:08:16.001 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:08:16.002 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:08:16.007 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:12:10.840 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to update employee with ID: 1
+2025-07-14 14:12:10.840 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Updating employee with ID: 1
+2025-07-14 14:12:10.843 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Employee updated successfully: robb@stark.com
+2025-07-14 14:12:10.863 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully updated employee with ID: 1
+2025-07-14 14:12:12.437 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:12:12.451 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:12:12.452 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:12:12.453 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:12:12.466 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:12:12.474 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:12:12.477 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:12:12.477 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:12:12.482 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:12:12.492 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:12:19.378 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:12:19.378 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:12:19.385 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:12:19.389 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:12:19.389 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:12:19.392 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:14:11.053 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:14:11.061 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:14:11.062 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:14:11.062 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:14:11.074 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:14:11.081 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:14:11.086 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:14:11.092 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:14:11.093 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:14:11.105 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:14:19.741 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:14:19.744 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:14:19.744 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:14:19.744 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:14:19.756 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:14:19.759 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:14:19.763 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:14:19.763 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:14:19.764 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:14:19.771 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:16:11.436 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:16:11.441 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:16:11.444 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:16:11.446 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:16:11.454 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:16:11.458 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:16:11.466 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:16:11.466 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:16:11.466 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:16:11.466 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:16:14.768 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:16:14.769 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:16:14.771 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:16:14.777 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:16:14.778 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:16:14.779 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:22:15.505 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:22:15.506 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:22:15.512 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:24:14.620 [RMI TCP Connection(58)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-14 14:24:14.622 [RMI TCP Connection(58)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 14:24:14.818 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 14:24:17.530 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 19420 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 14:24:17.532 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 14:24:17.575 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-14 14:24:17.576 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-14 14:24:18.981 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 14:24:19.034 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1457 ms
+2025-07-14 14:24:19.454 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 14:24:19.707 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 14:24:19.711 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 14:24:20.230 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 14:24:22.174 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 14:24:22.302 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 14:24:22.639 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 14:24:22.681 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 14:24:22.694 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 5.759 seconds (process running for 6.426)
+2025-07-14 14:24:28.113 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 14:24:28.115 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-14 14:24:28.696 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:24:28.697 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:24:28.710 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:24:28.731 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:24:28.731 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:24:28.738 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:24:48.996 [http-nio-8080-exec-5] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:24:49.348 [http-nio-8080-exec-5] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:24:55.055 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:24:55.061 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:24:55.062 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:24:55.070 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:24:55.096 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:24:55.105 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:24:55.110 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:24:55.110 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:24:55.110 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:24:55.117 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:24:58.053 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:24:58.054 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:24:58.057 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:24:58.063 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:24:58.063 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:24:58.068 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:25:12.274 [http-nio-8080-exec-1] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:25:12.577 [http-nio-8080-exec-1] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:33:36.071 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 60 class path changes (0 additions, 59 deletions, 1 modification)
+2025-07-14 14:33:36.091 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 14:33:37.279 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 14:33:37.885 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 19420 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 14:33:37.889 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 14:33:39.229 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 14:33:39.364 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1468 ms
+2025-07-14 14:33:40.344 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 14:33:40.822 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 14:33:40.824 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 14:33:41.093 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 14:33:41.576 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 14:33:42.253 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 14:33:42.308 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 14:33:42.343 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 4.816 seconds (process running for 566.075)
+2025-07-14 14:33:42.347 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 14:33:42.509 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 14:33:42.509 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-07-14 14:33:47.328 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 59 class path changes (59 additions, 0 deletions, 0 modifications)
+2025-07-14 14:33:47.328 [Thread-7] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 14:33:48.165 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 14:33:48.464 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 19420 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 14:33:48.464 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 14:33:49.871 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 14:33:49.928 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1448 ms
+2025-07-14 14:33:50.157 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 14:33:50.409 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 14:33:50.419 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 14:33:50.582 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 14:33:51.637 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 14:33:51.884 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 14:33:52.329 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 14:33:52.377 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 14:33:52.407 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 4.052 seconds (process running for 576.147)
+2025-07-14 14:33:52.416 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 14:34:46.801 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 14:34:46.804 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-07-14 14:34:46.812 [http-nio-8080-exec-1] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:34:47.144 [http-nio-8080-exec-1] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:34:49.413 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:34:49.421 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:34:49.423 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:34:49.426 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:34:49.439 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:34:49.447 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:34:49.453 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:34:49.454 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:34:49.454 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:34:49.461 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:34:58.316 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:34:58.316 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:34:58.323 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:34:58.332 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:34:58.332 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:34:58.332 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:35:07.036 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:35:07.036 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:35:07.038 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:35:07.047 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:35:07.047 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:35:07.054 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:35:24.659 [http-nio-8080-exec-5] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:35:24.990 [http-nio-8080-exec-5] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:38:28.624 [http-nio-8080-exec-2] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:38:28.928 [http-nio-8080-exec-2] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:46:49.523 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:46:49.523 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:46:49.525 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:46:49.533 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:46:49.534 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:46:49.538 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:46:57.562 [RMI TCP Connection(37)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-14 14:46:57.565 [RMI TCP Connection(37)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 14:46:57.726 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 14:46:59.900 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 7500 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 14:46:59.902 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 14:46:59.941 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-14 14:46:59.941 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-14 14:47:01.203 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 14:47:01.256 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1315 ms
+2025-07-14 14:47:01.800 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 14:47:01.921 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 14:47:01.926 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 14:47:02.572 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 14:47:04.402 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 14:47:04.509 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 14:47:04.841 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 14:47:04.879 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 14:47:04.887 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 5.526 seconds (process running for 6.184)
+2025-07-14 14:47:30.705 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 14:47:30.706 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-07-14 14:47:31.512 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:47:31.513 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:47:31.522 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:47:31.547 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:47:31.548 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:47:31.554 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:47:41.189 [http-nio-8080-exec-10] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:47:41.682 [http-nio-8080-exec-10] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:50:57.712 [http-nio-8080-exec-6] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 14:50:58.030 [http-nio-8080-exec-6] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 14:52:01.720 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:52:01.730 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:52:01.732 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:52:01.744 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:52:01.781 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:52:01.797 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:52:01.806 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:52:01.808 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:52:01.810 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:52:01.826 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:52:10.372 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:52:10.379 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:52:10.380 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:52:10.381 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:52:10.388 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:52:10.392 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:52:10.403 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:52:10.404 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:52:10.407 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:52:10.415 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:52:41.797 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:52:41.800 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:52:41.804 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:52:41.815 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:52:41.816 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:52:41.821 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:53:11.974 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:53:11.983 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:53:11.983 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:53:11.984 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:53:11.997 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:53:12.002 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:53:12.016 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:53:12.016 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:53:12.018 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:53:12.028 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:53:16.805 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:53:16.805 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:53:16.818 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:53:16.826 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:53:16.826 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:53:16.829 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:53:56.731 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to update employee with ID: 1
+2025-07-14 14:53:56.732 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Updating employee with ID: 1
+2025-07-14 14:53:56.734 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-14 14:53:56.735 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Employee updated successfully: robb@stark.com
+2025-07-14 14:53:56.755 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully updated employee with ID: 1
+2025-07-14 14:53:58.334 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:53:58.345 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:53:58.347 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:53:58.349 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:53:58.358 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:53:58.367 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:53:58.376 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:53:58.377 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:53:58.381 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:53:58.388 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:56:29.490 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 14:56:29.497 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 14:56:29.498 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 14:56:29.500 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 14:56:29.508 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 14:56:35.045 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:56:35.046 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:56:35.049 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 14:56:35.061 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 14:56:35.061 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 14:56:35.063 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 15:08:40.435 [RMI TCP Connection(32)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-14 15:08:40.435 [RMI TCP Connection(32)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 15:08:40.621 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 15:08:42.897 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 2284 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 15:08:42.899 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 15:08:42.941 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-14 15:08:42.941 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-14 15:08:44.179 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 15:08:44.231 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1290 ms
+2025-07-14 15:08:44.655 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 15:08:44.916 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 15:08:44.919 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 15:08:45.377 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 15:08:47.196 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 15:08:47.303 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 15:08:47.623 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 15:08:47.655 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 15:08:47.665 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 5.31 seconds (process running for 5.993)
+2025-07-14 15:09:03.824 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 15:09:03.826 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-14 15:09:04.772 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 15:09:04.776 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 15:09:04.790 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 15:09:04.814 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 15:09:04.815 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 15:09:04.821 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 15:10:44.358 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 60 class path changes (0 additions, 59 deletions, 1 modification)
+2025-07-14 15:10:44.367 [Thread-5] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 15:10:44.627 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 15:10:44.850 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 2284 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 15:10:44.854 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 15:10:45.472 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 15:10:45.501 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 642 ms
+2025-07-14 15:10:45.630 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 15:10:45.841 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 15:10:45.845 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 15:10:45.906 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 15:10:45.980 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 15:10:46.186 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 15:10:46.203 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 15:10:46.209 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 1.49 seconds (process running for 124.545)
+2025-07-14 15:10:46.227 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 15:10:48.042 [File Watcher] INFO  o.s.b.d.a.LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 59 class path changes (59 additions, 0 deletions, 0 modifications)
+2025-07-14 15:10:48.047 [Thread-7] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 15:10:48.281 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-14 15:10:48.383 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Starting PayrollApplication using Java 17.0.12 with PID 2284 (C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll\target\classes started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 15:10:48.383 [restartedMain] INFO  c.payroll.texas.PayrollApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 15:10:48.723 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-07-14 15:10:48.759 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 376 ms
+2025-07-14 15:10:48.905 [restartedMain] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 15:10:49.017 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 15:10:49.017 [restartedMain] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 15:10:49.093 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 15:10:49.563 [restartedMain] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 15:10:49.644 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 15:10:49.743 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-14 15:10:49.757 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-07-14 15:10:49.764 [restartedMain] INFO  c.payroll.texas.PayrollApplication - Started PayrollApplication in 1.418 seconds (process running for 128.092)
+2025-07-14 15:10:49.766 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-07-14 15:10:51.483 [main] INFO  c.p.texas.PayrollApplicationTests - Starting PayrollApplicationTests using Java 17.0.12 with PID 19244 (started by HP in C:\Users\HP\Desktop\texas.payroll\gvkss-payrollbackend\payroll)
+2025-07-14 15:10:51.483 [main] INFO  c.p.texas.PayrollApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-07-14 15:10:53.852 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/texas_payroll (PostgreSQL 17.5)
+2025-07-14 15:10:54.020 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 8
+2025-07-14 15:10:54.027 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-07-14 15:10:54.762 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-14 15:10:57.280 [main] INFO  c.p.t.controller.EmployeeController - EmployeeController is being instantiated!
+2025-07-14 15:10:57.563 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-14 15:10:58.057 [main] INFO  c.p.texas.PayrollApplicationTests - Started PayrollApplicationTests in 7.203 seconds (process running for 8.531)
+2025-07-14 15:10:59.225 [main] WARN  c.p.texas.service.PasswordService - Password validation failed - incorrect password
+2025-07-14 15:10:59.538 [main] ERROR c.p.texas.service.PasswordService - Attempted to encrypt null or empty password
+2025-07-14 15:10:59.549 [main] WARN  c.p.texas.service.PasswordService - Password validation attempted with null values
+2025-07-14 15:10:59.549 [main] WARN  c.p.texas.service.PasswordService - Password validation attempted with null values
+2025-07-14 15:10:59.549 [main] WARN  c.p.texas.service.PasswordService - Password validation attempted with null values
+2025-07-14 15:10:59.552 [main] ERROR c.p.texas.service.PasswordService - Attempted to encrypt null or empty password
+2025-07-14 15:19:10.713 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-14 15:19:10.717 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-07-14 15:19:11.164 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 15:19:11.165 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 15:19:11.176 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 15:19:11.191 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 15:19:11.191 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 15:19:11.200 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 15:19:46.001 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 15:19:46.009 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:19:46.011 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:19:46.024 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 15:19:46.050 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 15:19:46.065 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 15:19:46.074 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:19:46.074 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:19:46.074 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 15:19:46.088 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 1 employees for company 2 and status ACTIVE
+2025-07-14 15:47:48.974 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to add employee with company. Payload keys: [employee]
+2025-07-14 15:47:48.982 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:47:48.982 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:47:48.982 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Converting employee object to Employee entity...
+2025-07-14 15:47:49.009 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Saving employee: Dinesh Nampally
+2025-07-14 15:47:49.009 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Saving employee: nampallydinesh91@gmail.com
+2025-07-14 15:47:49.009 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-14 15:47:49.009 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Bank account encryption temporarily disabled for testing
+2025-07-14 15:47:49.009 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Bank routing encryption temporarily disabled for testing
+2025-07-14 15:47:49.092 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Employee saved successfully with ID: 4
+2025-07-14 15:47:49.157 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 15:47:49.170 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:47:49.170 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:47:49.170 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 15:47:49.183 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 2 employees for company 2 and status ACTIVE
+2025-07-14 15:47:49.199 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 15:47:49.205 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:47:49.207 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:47:49.208 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 15:47:49.226 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 2 employees for company 2 and status ACTIVE
+2025-07-14 15:52:27.951 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 15:52:27.967 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:52:27.968 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:52:27.970 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 15:52:27.973 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 2 employees for company 2 and status ACTIVE
+2025-07-14 15:52:27.981 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 15:52:27.985 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 15:52:27.985 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 15:52:27.989 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 15:52:27.999 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 2 employees for company 2 and status ACTIVE
+2025-07-14 16:02:40.129 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to add employee with company. Payload keys: [employee]
+2025-07-14 16:02:40.135 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:02:40.135 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:02:40.135 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Converting employee object to Employee entity...
+2025-07-14 16:02:40.145 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Saving employee: Jon Snow
+2025-07-14 16:02:40.145 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Saving employee: jon@stark.com
+2025-07-14 16:02:40.145 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-14 16:02:40.145 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Bank account encryption temporarily disabled for testing
+2025-07-14 16:02:40.145 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Bank routing encryption temporarily disabled for testing
+2025-07-14 16:02:40.168 [http-nio-8080-exec-3] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 23514
+2025-07-14 16:02:40.168 [http-nio-8080-exec-3] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - ERROR: new row for relation "employees" violates check constraint "chk_employee_status"
+  Detail: Failing row contains (5, 2, 009, Jon, Snow, jon@stark.com, 987654321, EMPLOYEE, ON_LEAVE, null, null, 2001-02-03, developer, , 2025-07-13, null, HOURLY, null, null, BI_WEEKLY, 0, 0, 0.00, 0.00, 1234567, null, 111000624, null, Andhra Bank, CHECKING, 2025-07-14 16:02:40.145619, 2025-07-14 16:02:40.146671, null, {}, Sanathnagar, Hyderabad, , Hyderabad, Telangana, 50001, 0, 987755321, null, SINGLE, f).
+2025-07-14 16:02:40.183 [http-nio-8080-exec-3] ERROR c.p.t.controller.EmployeeController - Error adding employee with company: could not execute statement [ERROR: new row for relation "employees" violates check constraint "chk_employee_status"
+  Detail: Failing row contains (5, 2, 009, Jon, Snow, jon@stark.com, 987654321, EMPLOYEE, ON_LEAVE, null, null, 2001-02-03, developer, , 2025-07-13, null, HOURLY, null, null, BI_WEEKLY, 0, 0, 0.00, 0.00, 1234567, null, 111000624, null, Andhra Bank, CHECKING, 2025-07-14 16:02:40.145619, 2025-07-14 16:02:40.146671, null, {}, Sanathnagar, Hyderabad, , Hyderabad, Telangana, 50001, 0, 987755321, null, SINGLE, f).] [insert into employees (account_type,additional_federal_withholding,additional_state_withholding,address_line1,address_line2,bank_account_number_encrypted,bank_account_number_encrypted_iv,bank_name,bank_routing_number_encrypted,bank_routing_number_encrypted_iv,city,company_id,compensation_type,created_at,custom_fields,date_of_birth,deleted_at,department,dependents,email,employee_id,employee_type,federal_tax_exemptions,first_name,hire_date,hourly_rate,is_exempt,job_title,last_name,pay_frequency,phone,salary,ssn,ssn_encrypted,ssn_encrypted_iv,standard_hours,state,state_tax_exemptions,status,tax_filing_status,termination_date,updated_at,zip_code) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employees (account_type,additional_federal_withholding,additional_state_withholding,address_line1,address_line2,bank_account_number_encrypted,bank_account_number_encrypted_iv,bank_name,bank_routing_number_encrypted,bank_routing_number_encrypted_iv,city,company_id,compensation_type,created_at,custom_fields,date_of_birth,deleted_at,department,dependents,email,employee_id,employee_type,federal_tax_exemptions,first_name,hire_date,hourly_rate,is_exempt,job_title,last_name,pay_frequency,phone,salary,ssn,ssn_encrypted,ssn_encrypted_iv,standard_hours,state,state_tax_exemptions,status,tax_filing_status,termination_date,updated_at,zip_code) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [chk_employee_status]
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: new row for relation "employees" violates check constraint "chk_employee_status"
+  Detail: Failing row contains (5, 2, 009, Jon, Snow, jon@stark.com, 987654321, EMPLOYEE, ON_LEAVE, null, null, 2001-02-03, developer, , 2025-07-13, null, HOURLY, null, null, BI_WEEKLY, 0, 0, 0.00, 0.00, 1234567, null, 111000624, null, Andhra Bank, CHECKING, 2025-07-14 16:02:40.145619, 2025-07-14 16:02:40.146671, null, {}, Sanathnagar, Hyderabad, , Hyderabad, Telangana, 50001, 0, 987755321, null, SINGLE, f).] [insert into employees (account_type,additional_federal_withholding,additional_state_withholding,address_line1,address_line2,bank_account_number_encrypted,bank_account_number_encrypted_iv,bank_name,bank_routing_number_encrypted,bank_routing_number_encrypted_iv,city,company_id,compensation_type,created_at,custom_fields,date_of_birth,deleted_at,department,dependents,email,employee_id,employee_type,federal_tax_exemptions,first_name,hire_date,hourly_rate,is_exempt,job_title,last_name,pay_frequency,phone,salary,ssn,ssn_encrypted,ssn_encrypted_iv,standard_hours,state,state_tax_exemptions,status,tax_filing_status,termination_date,updated_at,zip_code) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into employees (account_type,additional_federal_withholding,additional_state_withholding,address_line1,address_line2,bank_account_number_encrypted,bank_account_number_encrypted_iv,bank_name,bank_routing_number_encrypted,bank_routing_number_encrypted_iv,city,company_id,compensation_type,created_at,custom_fields,date_of_birth,deleted_at,department,dependents,email,employee_id,employee_type,federal_tax_exemptions,first_name,hire_date,hourly_rate,is_exempt,job_title,last_name,pay_frequency,phone,salary,ssn,ssn_encrypted,ssn_encrypted_iv,standard_hours,state,state_tax_exemptions,status,tax_filing_status,termination_date,updated_at,zip_code) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; constraint [chk_employee_status]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:294)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:256)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
+	at jdk.proxy6/jdk.proxy6.$Proxy168.save(Unknown Source)
+	at com.payroll.texas.service.EmployeeService.saveEmployee(EmployeeService.java:88)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.payroll.texas.service.EmployeeService$$SpringCGLIB$$0.saveEmployee(<generated>)
+	at com.payroll.texas.controller.EmployeeController.addEmployeeWithCompany(EmployeeController.java:257)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1769)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: new row for relation "employees" violates check constraint "chk_employee_status"
+  Detail: Failing row contains (5, 2, 009, Jon, Snow, jon@stark.com, 987654321, EMPLOYEE, ON_LEAVE, null, null, 2001-02-03, developer, , 2025-07-13, null, HOURLY, null, null, BI_WEEKLY, 0, 0, 0.00, 0.00, 1234567, null, 111000624, null, Andhra Bank, CHECKING, 2025-07-14 16:02:40.145619, 2025-07-14 16:02:40.146671, null, {}, Sanathnagar, Hyderabad, , Hyderabad, Telangana, 50001, 0, 987755321, null, SINGLE, f).] [insert into employees (account_type,additional_federal_withholding,additional_state_withholding,address_line1,address_line2,bank_account_number_encrypted,bank_account_number_encrypted_iv,bank_name,bank_routing_number_encrypted,bank_routing_number_encrypted_iv,city,company_id,compensation_type,created_at,custom_fields,date_of_birth,deleted_at,department,dependents,email,employee_id,employee_type,federal_tax_exemptions,first_name,hire_date,hourly_rate,is_exempt,job_title,last_name,pay_frequency,phone,salary,ssn,ssn_encrypted,ssn_encrypted_iv,standard_hours,state,state_tax_exemptions,status,tax_filing_status,termination_date,updated_at,zip_code) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95)
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85)
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:682)
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:293)
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:274)
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:324)
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:394)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:308)
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224)
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364)
+	at jdk.proxy6/jdk.proxy6.$Proxy163.persist(Unknown Source)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
+	at jdk.proxy6/jdk.proxy6.$Proxy163.persist(Unknown Source)
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:653)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:734)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+	... 69 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: new row for relation "employees" violates check constraint "chk_employee_status"
+  Detail: Failing row contains (5, 2, 009, Jon, Snow, jon@stark.com, 987654321, EMPLOYEE, ON_LEAVE, null, null, 2001-02-03, developer, , 2025-07-13, null, HOURLY, null, null, BI_WEEKLY, 0, 0, 0.00, 0.00, 1234567, null, 111000624, null, Andhra Bank, CHECKING, 2025-07-14 16:02:40.145619, 2025-07-14 16:02:40.146671, null, {}, Sanathnagar, Hyderabad, , Hyderabad, Telangana, 50001, 0, 987755321, null, SINGLE, f).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2734)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2421)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:518)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:435)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194)
+	... 125 common frames omitted
+2025-07-14 16:06:11.759 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to add employee with company. Payload keys: [employee]
+2025-07-14 16:06:11.767 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:11.768 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:11.768 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Converting employee object to Employee entity...
+2025-07-14 16:06:11.780 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Saving employee: Jon Snow
+2025-07-14 16:06:11.780 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Saving employee: jon@stark.com
+2025-07-14 16:06:11.780 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - SSN encryption temporarily disabled for testing
+2025-07-14 16:06:11.780 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Bank account encryption temporarily disabled for testing
+2025-07-14 16:06:11.780 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Bank routing encryption temporarily disabled for testing
+2025-07-14 16:06:11.791 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Employee saved successfully with ID: 6
+2025-07-14 16:06:11.860 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:11.865 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:11.865 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:11.868 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:06:11.875 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:06:11.882 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:11.889 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:11.892 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:11.892 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:06:11.908 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:06:33.527 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:33.532 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:33.532 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:33.532 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: INACTIVE
+2025-07-14 16:06:33.544 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status INACTIVE
+2025-07-14 16:06:34.443 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:34.451 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:34.451 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:34.451 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: TERMINATED
+2025-07-14 16:06:34.451 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 0 employees for company 2 and status TERMINATED
+2025-07-14 16:06:35.546 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:35.549 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:35.549 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:35.549 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:06:35.563 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:06:50.831 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:06:50.831 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:06:50.834 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:06:50.835 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:06:50.835 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:06:50.841 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:06:57.026 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:57.033 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:57.033 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:57.034 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:06:57.044 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:06:57.051 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:06:57.057 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:06:57.057 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:06:57.057 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:06:57.078 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:02.070 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:07:02.070 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:07:02.076 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:07:02.083 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:07:02.083 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:07:02.094 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:07:06.948 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:06.951 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:06.953 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:06.953 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:06.963 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:06.966 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:06.966 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:06.966 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:06.966 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:06.982 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:11.717 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 16:07:11.717 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 16:07:11.723 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 16:07:11.727 [http-nio-8080-exec-6] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 16:07:11.728 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 16:07:11.729 [http-nio-8080-exec-6] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 16:07:13.368 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:13.374 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:13.374 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:13.375 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:13.385 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:13.387 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:13.393 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:13.393 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:13.393 [http-nio-8080-exec-4] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:13.396 [http-nio-8080-exec-4] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:15.241 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 16:07:15.241 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 16:07:15.241 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 16:07:15.246 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 1
+2025-07-14 16:07:15.246 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 1
+2025-07-14 16:07:15.246 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: robb@stark.com
+2025-07-14 16:07:18.652 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:18.656 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:18.658 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:18.658 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:18.671 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:18.675 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:18.681 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:18.681 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:18.683 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:18.691 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:20.461 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:07:20.464 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:07:20.466 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:07:20.472 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:07:20.472 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:07:20.474 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:07:22.205 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:22.209 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:22.209 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:22.210 [http-nio-8080-exec-10] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:22.220 [http-nio-8080-exec-10] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:07:22.226 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:07:22.228 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:07:22.229 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:07:22.229 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:07:22.239 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:08:21.187 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:08:21.187 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:08:21.189 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:08:21.196 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 6
+2025-07-14 16:08:21.196 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 6
+2025-07-14 16:08:21.196 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found employee: jon@stark.com
+2025-07-14 16:09:17.147 [http-nio-8080-exec-9] INFO  c.payroll.texas.service.AuthService - Login attempt for email: ned@stark.com
+2025-07-14 16:09:17.971 [http-nio-8080-exec-9] INFO  c.payroll.texas.service.AuthService - Login successful for user: ned@stark.com (ID: 2)
+2025-07-14 16:09:30.714 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:09:30.718 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:09:30.720 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:09:30.721 [http-nio-8080-exec-8] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:09:30.729 [http-nio-8080-exec-8] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:09:30.736 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:09:30.742 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:09:30.743 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:09:30.743 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:09:30.750 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:12:28.298 [http-nio-8080-exec-7] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 4
+2025-07-14 16:12:28.298 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 4
+2025-07-14 16:12:28.299 [http-nio-8080-exec-7] INFO  c.p.texas.service.EmployeeService - Found employee: nampallydinesh91@gmail.com
+2025-07-14 16:12:28.304 [http-nio-8080-exec-3] INFO  c.p.t.controller.EmployeeController - Received request to get employee with ID: 4
+2025-07-14 16:12:28.304 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Fetching employee by ID: 4
+2025-07-14 16:12:28.306 [http-nio-8080-exec-3] INFO  c.p.texas.service.EmployeeService - Found employee: nampallydinesh91@gmail.com
+2025-07-14 16:12:50.886 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:12:50.888 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:12:50.888 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:12:50.888 [http-nio-8080-exec-5] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:12:50.900 [http-nio-8080-exec-5] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:12:50.903 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:12:50.905 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:12:50.905 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:12:50.905 [http-nio-8080-exec-9] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:12:50.912 [http-nio-8080-exec-9] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:17:50.653 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:17:50.657 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:17:50.657 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:17:50.658 [http-nio-8080-exec-1] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:17:50.665 [http-nio-8080-exec-1] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:17:50.668 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Received request to get all employees for logged-in user's company
+2025-07-14 16:17:50.675 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Getting company from user context for user ID: 2
+2025-07-14 16:17:50.675 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Found company Winterfel for user 2
+2025-07-14 16:17:50.677 [http-nio-8080-exec-2] INFO  c.p.texas.service.EmployeeService - Fetching employees for company ID: 2 and status: ACTIVE
+2025-07-14 16:17:50.680 [http-nio-8080-exec-2] INFO  c.p.t.controller.EmployeeController - Successfully retrieved 3 employees for company 2 and status ACTIVE
+2025-07-14 16:18:01.538 [RMI TCP Connection(81)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-07-14 16:18:01.543 [RMI TCP Connection(81)-127.0.0.1] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-14 16:18:01.966 [tomcat-shutdown] INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
