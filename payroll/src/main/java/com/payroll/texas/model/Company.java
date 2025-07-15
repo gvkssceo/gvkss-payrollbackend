@@ -1,5 +1,6 @@
 package com.payroll.texas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
@@ -69,9 +70,11 @@ public class Company {
     
     // Relationships
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore // Prevent circular reference during serialization
     private List<User> users = new ArrayList<>();
     
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore // Prevent circular reference during serialization
     private List<Employee> employees = new ArrayList<>();
     
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

@@ -1,5 +1,6 @@
 package com.payroll.texas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
@@ -18,6 +19,7 @@ public class Employee {
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id", nullable = true)
+    @JsonIgnore // Prevent circular reference during serialization
     private Company company;
     
     @Column(nullable = false)
@@ -512,11 +514,6 @@ public class Employee {
     // Business methods
     public boolean isActive() {
         return status == EmployeeStatus.ACTIVE;
-    }
-    
-    public boolean isTerminated() {
-        return status == EmployeeStatus.TERMINATED || 
-               (terminationDate != null && terminationDate.isBefore(LocalDate.now()));
     }
     
     public boolean isHourly() {
