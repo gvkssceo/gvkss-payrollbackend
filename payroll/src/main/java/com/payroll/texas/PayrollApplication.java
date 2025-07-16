@@ -3,12 +3,23 @@ package com.payroll.texas;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import io.github.cdimascio.dotenv.Dotenv;
 
 @SpringBootApplication
 public class PayrollApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context = SpringApplication.run(PayrollApplication.class, args);
+		// Load .env file
+		Dotenv dotenv = Dotenv.configure()
+			.directory("./") // or specify the path if not in root
+			.ignoreIfMalformed()
+			.ignoreIfMissing()
+			.load();
+
+		// Set as system properties so Spring can use @Value
+		dotenv.entries().forEach(entry -> System.setProperty(entry.getKey(), entry.getValue()));
+
+		ApplicationContext context = org.springframework.boot.SpringApplication.run(PayrollApplication.class, args);
 		
 		// Debug: Print all controller beans
 		System.out.println("=== CONTROLLER BEANS ===");

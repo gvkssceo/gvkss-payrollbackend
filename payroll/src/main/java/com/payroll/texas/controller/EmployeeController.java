@@ -3,9 +3,11 @@ package com.payroll.texas.controller;
 import com.payroll.texas.model.Employee;
 import com.payroll.texas.service.EmployeeService;
 import com.payroll.texas.service.AuthService;
+import com.payroll.texas.service.RsaDecryptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +45,18 @@ public class EmployeeController {
     public ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
         logger.info("Received request to add new employee: {}", employee.getEmail());
         try {
+            // Decrypt sensitive fields if they are not null and look encrypted
+            String privateKeyPem = System.getenv("PRIVATE_KEY");
+            RsaDecryptor decryptor = new RsaDecryptor(privateKeyPem);
+            if (employee.getSsn() != null && !employee.getSsn().isEmpty()) {
+                try { employee.setSsn(decryptor.decrypt(employee.getSsn())); } catch (Exception ignored) {}
+            }
+            if (employee.getBankAccountNumberEncrypted() != null && !employee.getBankAccountNumberEncrypted().isEmpty()) {
+                try { employee.setBankAccountNumberEncrypted(decryptor.decrypt(employee.getBankAccountNumberEncrypted())); } catch (Exception ignored) {}
+            }
+            if (employee.getBankRoutingNumberEncrypted() != null && !employee.getBankRoutingNumberEncrypted().isEmpty()) {
+                try { employee.setBankRoutingNumberEncrypted(decryptor.decrypt(employee.getBankRoutingNumberEncrypted())); } catch (Exception ignored) {}
+            }
             Employee savedEmployee = employeeService.saveEmployee(employee);
             logger.info("Successfully added employee with ID: {}", savedEmployee.getId());
             
