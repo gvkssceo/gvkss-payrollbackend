@@ -131,6 +131,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>dotenv-java</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -146,7 +151,7 @@
 				<artifactId>flyway-maven-plugin</artifactId>
 				<version>11.7.2</version>
 				<configuration>
-					<url>jdbc:postgresql://localhost:5432/postgres</url>
+					<url>jdbc:postgresql://localhost:5432/texas_payroll</url>
 					<user>postgres</user>
 					<password>1234</password>
 					<cleanDisabled>false</cleanDisabled>

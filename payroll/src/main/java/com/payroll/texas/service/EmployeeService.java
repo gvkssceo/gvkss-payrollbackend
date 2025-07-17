@@ -31,6 +31,9 @@ public class EmployeeService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private EncryptionService encryptionService;
+
     public Employee saveEmployee(Employee employee) {
         logger.info("Saving employee: {}", employee.getEmail());
         
@@ -64,25 +67,23 @@ public class EmployeeService {
         
         employee.setUpdatedAt(LocalDateTime.now());
         
-        // TODO: Temporarily disable encryption for testing - re-enable later
-        // Handle SSN encryption if provided
-        if (employee.getSsn() != null && !employee.getSsn().isEmpty()) {
-            // String encryptedSsn = encryptionService.encryptSSN(employee.getSsn());
-            // employee.setSsnEncrypted(encryptedSsn);
-            logger.info("SSN encryption temporarily disabled for testing");
+        // Encrypt and store sensitive fields (no validation here)
+        // SSN is handled by controller, so just store encrypted value if present
+        if (employee.getSsn() != null) {
+            logger.info("[BACKEND] SSN before encryption: {}", employee.getSsn());
+            String encryptedSsn = encryptionService.encryptSSN(employee.getSsn());
+            logger.info("[BACKEND] SSN after encryption: {}", encryptedSsn);
+            employee.setSsnEncrypted(encryptedSsn);
+            employee.setSsn(null);
         }
-
-        // Handle bank account encryption if provided
-        if (employee.getBankAccountNumberEncrypted() != null && !employee.getBankAccountNumberEncrypted().isEmpty()) {
-            // String encryptedAccountNumber = encryptionService.encryptBankAccount(employee.getBankAccountNumberEncrypted());
-            // employee.setBankAccountNumberEncrypted(encryptedAccountNumber);
-            logger.info("Bank account encryption temporarily disabled for testing");
+        // Routing number and account number are already encrypted by controller, just store
+        if (employee.getBankRoutingNumberEncrypted() != null) {
+            logger.info("[BACKEND] Routing number (already encrypted): {}", employee.getBankRoutingNumberEncrypted());
+            // Do NOT re-encrypt, just store as is
         }
-
-        if (employee.getBankRoutingNumberEncrypted() != null && !employee.getBankRoutingNumberEncrypted().isEmpty()) {
-            // String encryptedRoutingNumber = encryptionService.encryptRoutingNumber(employee.getBankRoutingNumberEncrypted());
-            // employee.setBankRoutingNumberEncrypted(encryptedRoutingNumber);
-            logger.info("Bank routing encryption temporarily disabled for testing");
+        if (employee.getBankAccountNumberEncrypted() != null) {
+            logger.info("[BACKEND] Account number (already encrypted): {}", employee.getBankAccountNumberEncrypted());
+            // Do NOT re-encrypt, just store as is
         }
 
         Employee savedEmployee = employeeRepository.save(employee);
@@ -202,25 +203,44 @@ public class EmployeeService {
             employee.setCustomFields(employeeDetails.getCustomFields());
         }
 
-        // TODO: Temporarily disable encryption for testing - re-enable later
         // Handle SSN encryption if provided
         if (employeeDetails.getSsn() != null && !employeeDetails.getSsn().isEmpty()) {
-            // String encryptedSsn = encryptionService.encryptSSN(employeeDetails.getSsn());
-            // employee.setSsnEncrypted(encryptedSsn);
-            logger.info("SSN encryption temporarily disabled for testing");
+            String ssn = employeeDetails.getSsn();
+            if (ssn.matches("\\d{9}")) {
+                String encryptedSsn = encryptionService.encryptSSN(ssn);
+                employee.setSsnEncrypted(encryptedSsn);
+                employee.setSsn(null); // Clear raw SSN to avoid double encryption
+                logger.info("SSN encrypted and set (update).");
+            } else {
+                employee.setSsnEncrypted(ssn);
+                employee.setSsn(null); // Clear to avoid accidental re-encryption
+                logger.info("SSN already encrypted, set as is (update).");
+            }
         }
 
         // Handle bank account encryption if provided
         if (employeeDetails.getBankAccountNumberEncrypted() != null && !employeeDetails.getBankAccountNumberEncrypted().isEmpty()) {
-            // String encryptedAccountNumber = encryptionService.encryptBankAccount(employeeDetails.getBankAccountNumberEncrypted());
-            // employee.setBankAccountNumberEncrypted(encryptedAccountNumber);
-            logger.info("Bank account encryption temporarily disabled for testing");
+            String account = employeeDetails.getBankAccountNumberEncrypted();
+            // Only encrypt if it's all digits (plain), otherwise assume already encrypted
+            if (account.matches("^\\d+$")) {
+                String encryptedAccountNumber = encryptionService.encryptBankAccount(account);
+                employee.setBankAccountNumberEncrypted(encryptedAccountNumber);
+                logger.info("Bank account encrypted and set (update).");
+            } else {
+                logger.info("Bank account already encrypted, set as is (update).");
+            }
         }
 
         if (employeeDetails.getBankRoutingNumberEncrypted() != null && !employeeDetails.getBankRoutingNumberEncrypted().isEmpty()) {
-            // String encryptedRoutingNumber = encryptionService.encryptRoutingNumber(employeeDetails.getBankRoutingNumberEncrypted());
-            // employee.setBankRoutingNumberEncrypted(encryptedRoutingNumber);
-            logger.info("Bank routing encryption temporarily disabled for testing");
+            String routing = employeeDetails.getBankRoutingNumberEncrypted();
+            // Only encrypt if it's exactly 9 digits (plain), otherwise assume already encrypted
+            if (routing.matches("^\\d{9}$")) {
+                String encryptedRoutingNumber = encryptionService.encryptRoutingNumber(routing);
+                employee.setBankRoutingNumberEncrypted(encryptedRoutingNumber);
+                logger.info("Bank routing number encrypted and set (update).");
+            } else {
+                logger.info("Bank routing number already encrypted, set as is (update).");
+            }
         }
 
         if (employeeDetails.getBankName() != null) {
