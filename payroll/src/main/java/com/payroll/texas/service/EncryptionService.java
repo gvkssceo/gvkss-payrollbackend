@@ -10,9 +10,13 @@ import javax.crypto.spec.GCMParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.SecureRandom;
 import java.util.Base64;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class EncryptionService {
+    
+    private static final Logger logger = LoggerFactory.getLogger(EncryptionService.class);
     
     @Value("${app.encryption.key}")
     private String encryptionKey;
@@ -112,6 +116,7 @@ public class EncryptionService {
         
         // Remove any non-digit characters
         String cleanSSN = ssn.replaceAll("[^0-9]", "");
+        logger.info("DEBUG: Decrypted SSN received: '{}' Cleaned: '{}'", ssn, cleanSSN);
         
         // Validate SSN format (9 digits)
         if (cleanSSN.length() != 9) {

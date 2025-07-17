@@ -46,13 +46,15 @@ jwt:
 # Encryption Configuration
 app:
   encryption:
-    key: dGhpc2lzYXRlc3RlbmNyeXB0aW9ua2V5Zm9yZGV2ZWxvcG1lbnRwdXJwb3Nlc29ubHk=
+    key: "oLfMBGOUISEWQlW6UX10FE99zwZhp2LUxEGTiRXONgs=" # <-- AES-256 key, base64-encoded, for dev only
     algorithm: AES/GCM/NoPadding
     ssn:
       enabled: true
     bank:
       enabled: true
-
+  rsa:
+    private-key: "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+W00HUMtb+vR/0R2AaExsRpY0k/Ssf8ZboOgRH957Y0qdZRFgteWYqKQDo/rtMZleOsu3HUScZUtLrn6Uua6Ddl3vRdzCC8mr2A05KfRdo9q/fluC16BeBpg+nqVTkEQBn0audC8Gv9PrlM7uwR67k07lFiVOPQ4+N15erTjFIQ4MLNiZLxTI3aaKjP/n3VEsCjO+m2cCH5vqV45Dr8YWFNvxfW9WZI7pAqMM3ZM4g3q32u9TiApNA+MCXSEXGw5gG+B984NIfVwW1zzBb0bGvP3Yy/IeQyPyQOw8sSZUlkQHhvOBUqCDc7e/xCAZJJGHABjH7naXAYFPVYi3aW21AgMBAAECggEATfx2utwJbHYMbD8ecIiKYsOqbwD8uR0iBVEPMlDVo8RigcgxzebHmPriMxGf0ERFOpso8ay+erpvFiL3ffPygK5iPpBnKGKO7WW2ySgckq56BID+ecTgURUvk1wIjIsqqWV5HijASWoWpsnQ23ToI93ucSFZCEwwRSIG+g/KlcvHpb4lzAHM9XZM5PJZPTFFtfwANpyDbAt3J+kr9mozrWrKFJq+fZRNJ1MY+Mq4QEO/sGJ9ZBGIMtLc9nmJvQWP5ZI9LxhwUwTE7+oT8zsvDEdb2CvU1cD+VZoprgjc+k9q2UBXjHwlSLoPJ2kZYkikyCaeJEK27HocBY/I8amf8wKBgQDdETGygbCwJlgWZrHAUyIjtuPX8eGcV91GHA7aGp/vpm/FIxBQ1BWrFqF7U/km1pVdD33IZmZWB0v7kO9+mjvQ0yFoMsoBBVMqDDLh605hy+G7cO7gn5hR+aYwGICokWZnmW2arakCCaAnHdptrifVgcWHb1nVBxJwL40vtKDD4wKBgQDcb8cFyXdWemqnJkfbBNRlx+6mkH5LlkVWMDh3rTl76JA3wlBttwDWVXf+FyA+Q4FRD/Xuq+MN6xTkf5jB/8jNLJ7CNl7nTR0CbvSoIXcPnUZmGmNkYh4RtY1cI9wtKiIiatr81p8IdZIZ8hn5BKgV3MdxoVc4uO/szhxfHkkrhwKBgGCPbBe+kkC+3ucaADYzmcvjzO28F4HE10ASbWJTEt0I4/VF9ZB4suZCQlKuQTv3qtI1PAnWwIh/M280xYeVMt9p+UOcO6PqgYLyRR9tOpV5CqZnE9BFpbDYzQBhE4GN0R8bY0aW6CWdsrijT49s7LVTs8YOmzxzlFgwTQkzaq1lAoGBAJj1CtGuKRudmBHh0yxbnpH9eFClpK0IWZZjoVsRnPiouCGouKxYtsECz19FZr8tkjbQb2MsbEHFJFslWrcKqKgN1R+IILQ44u9EVImxpu7zv9yrZNpL5vd81djgnS/Ns5/UK54TwohZJIbSYklTfNqmttHXFTGryfe0USWDW1xTAoGAcuNZ04+CLJI4PmbygmabhpwcGwSikb3jocwBsrwQjM5CKjzP+ROjUSQiZqDNrcRTMSpaANC80VRkmzAgVqkqdyH0pAYYvdiyuCGctAo32peZu4EyGMOtnrMGwbWg8i5cuhCKomhk63jjFPK5PVI9kRk4knh9mkrnbND5eRMsN3U=\n-----END PRIVATE KEY-----"
+    # ^^^ For dev only. Use env vars or secrets manager in production.
 # Server Configuration
 server:
   port: 8080
