@@ -225,4 +225,66 @@ public class EmployeeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(java.util.Map.of("error", e.getMessage()));
         }
     }
+
+    // Temporary endpoints to handle missing CompanyController functionality
+    
+    // Get default salary hours for a company
+    @GetMapping("/company/{companyId}/default-salary-hours")
+    public ResponseEntity<?> getDefaultSalaryHours(
+            @PathVariable Long companyId,
+            @RequestHeader("Authorization") String authHeader
+    ) {
+        logger.info("Received request to get default salary hours for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            java.util.Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+
+            // For now, return default values
+            java.util.Map<String, Object> defaultSalaryHours = new java.util.HashMap<>();
+            defaultSalaryHours.put("fullTime", new java.math.BigDecimal("86.67"));
+            defaultSalaryHours.put("partTime", new java.math.BigDecimal("43.34"));
+            defaultSalaryHours.put("temporary", new java.math.BigDecimal("86.67"));
+            defaultSalaryHours.put("contractor", new java.math.BigDecimal("86.67"));
+
+            logger.info("Successfully retrieved default salary hours for company: {}", companyId);
+            return ResponseEntity.ok(defaultSalaryHours);
+        } catch (Exception e) {
+            logger.error("Error retrieving default salary hours: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(java.util.Map.of("error", e.getMessage()));
+        }
+    }
+
+    // Get department codes for a company
+    @GetMapping("/company/{companyId}/department-codes")
+    public ResponseEntity<?> getDepartmentCodes(
+            @PathVariable Long companyId,
+            @RequestHeader("Authorization") String authHeader
+    ) {
+        logger.info("Received request to get department codes for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            java.util.Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(java.util.Map.of("error", "Invalid or expired token"));
+            }
+
+            // For now, return empty array
+            logger.info("Successfully retrieved department codes for company: {}", companyId);
+            return ResponseEntity.ok(new Object[0]);
+        } catch (Exception e) {
+            logger.error("Error retrieving department codes: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(java.util.Map.of("error", e.getMessage()));
+        }
+    }
 } 
