@@ -514,6 +514,9 @@ public class EmployeeController {
             logger.error("Error updating default salary hours for company {}: {}", companyId, e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Failed to update default salary hours: " + e.getMessage()));
+        }
+    }
+            
 
     // Secure endpoint to fetch decrypted sensitive info
     @GetMapping("/{id}/sensitive-info")
