@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.HashMap;
 
 @Service
 @Transactional
@@ -30,6 +32,9 @@ public class EmployeeService {
     
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private CustomFieldsService customFieldsService;
 
     public Employee saveEmployee(Employee employee) {
         logger.info("Saving employee: {}", employee.getEmail());
@@ -286,5 +291,278 @@ public class EmployeeService {
     public List<Employee> getEmployeesByCompanyIdAndStatus(Long companyId, com.payroll.texas.model.EmployeeStatus status) {
         logger.info("Fetching employees for company ID: {} and status: {}", companyId, status);
         return employeeRepository.findByCompanyIdAndStatus(companyId, status);
+    }
+
+    /**
+     * Get department codes for a company
+     */
+    public Map<String, Object> getDepartmentCodes(Long companyId) {
+        logger.info("Getting department codes for company ID: {}", companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            Map<String, Object> departmentCodes = new HashMap<>();
+            departmentCodes.put("departmentCodes", customFields.getOrDefault("departmentCodes", new String[0]));
+            departmentCodes.put("defaultDepartment", customFields.getOrDefault("defaultDepartment", ""));
+            
+            return departmentCodes;
+            
+        } catch (Exception e) {
+            logger.error("Error getting department codes for company ID {}: {}", companyId, e.getMessage());
+            throw new RuntimeException("Failed to get department codes", e);
+        }
+    }
+
+    /**
+     * Update department codes for a company
+     */
+    public Map<String, Object> updateDepartmentCodes(Long companyId, Map<String, Object> departmentCodesData) {
+        logger.info("Updating department codes for company ID: {}", companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            // Update department codes in custom fields
+            if (departmentCodesData.containsKey("departmentCodes")) {
+                customFields.put("departmentCodes", departmentCodesData.get("departmentCodes"));
+            }
+            if (departmentCodesData.containsKey("defaultDepartment")) {
+                customFields.put("defaultDepartment", departmentCodesData.get("defaultDepartment"));
+            }
+
+            // Save updated custom fields
+            String updatedCustomFields = new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(customFields);
+            company.setCustomFields(updatedCustomFields);
+            company.setUpdatedAt(LocalDateTime.now());
+            companyRepository.save(company);
+
+            return getDepartmentCodes(companyId);
+            
+        } catch (Exception e) {
+            logger.error("Error updating department codes for company ID {}: {}", companyId, e.getMessage());
+            throw new RuntimeException("Failed to update department codes", e);
+        }
+    }
+
+    /**
+     * Get default salary hours for a company
+     */
+    public Map<String, Object> getDefaultSalaryHours(Long companyId) {
+        logger.info("Getting default salary hours for company ID: {}", companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            Map<String, Object> defaultSalaryHours = new HashMap<>();
+            defaultSalaryHours.put("standardHours", customFields.getOrDefault("standardHours", 40));
+            defaultSalaryHours.put("overtimeThreshold", customFields.getOrDefault("overtimeThreshold", 40));
+            defaultSalaryHours.put("doubleTimeThreshold", customFields.getOrDefault("doubleTimeThreshold", 60));
+            defaultSalaryHours.put("defaultHourlyRate", customFields.getOrDefault("defaultHourlyRate", 15.0));
+            defaultSalaryHours.put("defaultSalary", customFields.getOrDefault("defaultSalary", 50000.0));
+            
+            return defaultSalaryHours;
+            
+        } catch (Exception e) {
+            logger.error("Error getting default salary hours for company ID {}: {}", companyId, e.getMessage());
+            throw new RuntimeException("Failed to get default salary hours", e);
+        }
+    }
+
+    /**
+     * Update default salary hours for a company
+     */
+    public Map<String, Object> updateDefaultSalaryHours(Long companyId, Map<String, Object> defaultSalaryHoursData) {
+        logger.info("Updating default salary hours for company ID: {}", companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            // Update default salary hours in custom fields
+            if (defaultSalaryHoursData.containsKey("standardHours")) {
+                customFields.put("standardHours", defaultSalaryHoursData.get("standardHours"));
+            }
+            if (defaultSalaryHoursData.containsKey("overtimeThreshold")) {
+                customFields.put("overtimeThreshold", defaultSalaryHoursData.get("overtimeThreshold"));
+            }
+            if (defaultSalaryHoursData.containsKey("doubleTimeThreshold")) {
+                customFields.put("doubleTimeThreshold", defaultSalaryHoursData.get("doubleTimeThreshold"));
+            }
+            if (defaultSalaryHoursData.containsKey("defaultHourlyRate")) {
+                customFields.put("defaultHourlyRate", defaultSalaryHoursData.get("defaultHourlyRate"));
+            }
+            if (defaultSalaryHoursData.containsKey("defaultSalary")) {
+                customFields.put("defaultSalary", defaultSalaryHoursData.get("defaultSalary"));
+            }
+
+            // Save updated custom fields
+            String updatedCustomFields = new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(customFields);
+            company.setCustomFields(updatedCustomFields);
+            company.setUpdatedAt(LocalDateTime.now());
+            companyRepository.save(company);
+
+            return getDefaultSalaryHours(companyId);
+            
+        } catch (Exception e) {
+            logger.error("Error updating default salary hours for company ID {}: {}", companyId, e.getMessage());
+            throw new RuntimeException("Failed to update default salary hours", e);
+        }
+    }
+
+    /**
+     * Add a new department code for a company
+     */
+    public Map<String, Object> addDepartmentCode(Long companyId, Map<String, Object> departmentCodeData) {
+        logger.info("Adding department code for company ID: {}", companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            // Get existing department codes
+            Object[] existingCodes = (Object[]) customFields.getOrDefault("departmentCodes", new Object[0]);
+            
+            // Create new department code object
+            Map<String, Object> newCode = new HashMap<>();
+            newCode.put("id", java.util.UUID.randomUUID().toString());
+            newCode.put("code", departmentCodeData.get("code"));
+            newCode.put("description", departmentCodeData.get("description"));
+            newCode.put("inUse", false);
+            newCode.put("inReports", false);
+            
+            // Add to existing codes
+            Object[] updatedCodes = new Object[existingCodes.length + 1];
+            System.arraycopy(existingCodes, 0, updatedCodes, 0, existingCodes.length);
+            updatedCodes[existingCodes.length] = newCode;
+            
+            // Update custom fields
+            customFields.put("departmentCodes", updatedCodes);
+            
+            // Save updated custom fields
+            String updatedCustomFields = new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(customFields);
+            company.setCustomFields(updatedCustomFields);
+            company.setUpdatedAt(LocalDateTime.now());
+            companyRepository.save(company);
+
+            return newCode;
+            
+        } catch (Exception e) {
+            logger.error("Error adding department code for company ID {}: {}", companyId, e.getMessage());
+            throw new RuntimeException("Failed to add department code", e);
+        }
+    }
+
+    /**
+     * Update a specific department code for a company
+     */
+    public Map<String, Object> updateDepartmentCodeById(Long companyId, String codeId, Map<String, Object> departmentCodeData) {
+        logger.info("Updating department code {} for company ID: {}", codeId, companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            // Get existing department codes
+            Object[] existingCodes = (Object[]) customFields.getOrDefault("departmentCodes", new Object[0]);
+            
+            // Find and update the specific code
+            boolean found = false;
+            for (int i = 0; i < existingCodes.length; i++) {
+                if (existingCodes[i] instanceof Map) {
+                    Map<String, Object> code = (Map<String, Object>) existingCodes[i];
+                    if (codeId.equals(code.get("id"))) {
+                        code.put("code", departmentCodeData.get("code"));
+                        code.put("description", departmentCodeData.get("description"));
+                        found = true;
+                        break;
+                    }
+                }
+            }
+            
+            if (!found) {
+                throw new RuntimeException("Department code not found with ID: " + codeId);
+            }
+            
+            // Save updated custom fields
+            String updatedCustomFields = new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(customFields);
+            company.setCustomFields(updatedCustomFields);
+            company.setUpdatedAt(LocalDateTime.now());
+            companyRepository.save(company);
+
+            // Return the updated code
+            for (Object codeObj : existingCodes) {
+                if (codeObj instanceof Map) {
+                    Map<String, Object> code = (Map<String, Object>) codeObj;
+                    if (codeId.equals(code.get("id"))) {
+                        return code;
+                    }
+                }
+            }
+            
+            throw new RuntimeException("Failed to return updated department code");
+            
+        } catch (Exception e) {
+            logger.error("Error updating department code {} for company ID {}: {}", codeId, companyId, e.getMessage());
+            throw new RuntimeException("Failed to update department code", e);
+        }
+    }
+
+    /**
+     * Delete a specific department code for a company
+     */
+    public void deleteDepartmentCodeById(Long companyId, String codeId) {
+        logger.info("Deleting department code {} for company ID: {}", codeId, companyId);
+        try {
+            Company company = companyRepository.findById(companyId)
+                    .orElseThrow(() -> new RuntimeException("Company not found with ID: " + companyId));
+
+            Map<String, Object> customFields = customFieldsService.getAllCustomFields(company.getCustomFields());
+            
+            // Get existing department codes
+            Object[] existingCodes = (Object[]) customFields.getOrDefault("departmentCodes", new Object[0]);
+            
+            // Find and remove the specific code
+            Object[] updatedCodes = new Object[existingCodes.length - 1];
+            int newIndex = 0;
+            boolean found = false;
+            
+            for (Object codeObj : existingCodes) {
+                if (codeObj instanceof Map) {
+                    Map<String, Object> code = (Map<String, Object>) codeObj;
+                    if (!codeId.equals(code.get("id"))) {
+                        updatedCodes[newIndex++] = codeObj;
+                    } else {
+                        found = true;
+                    }
+                }
+            }
+            
+            if (!found) {
+                throw new RuntimeException("Department code not found with ID: " + codeId);
+            }
+            
+            // Update custom fields
+            customFields.put("departmentCodes", updatedCodes);
+            
+            // Save updated custom fields
+            String updatedCustomFields = new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(customFields);
+            company.setCustomFields(updatedCustomFields);
+            company.setUpdatedAt(LocalDateTime.now());
+            companyRepository.save(company);
+            
+        } catch (Exception e) {
+            logger.error("Error deleting department code {} for company ID {}: {}", codeId, companyId, e.getMessage());
+            throw new RuntimeException("Failed to delete department code", e);
+        }
     }
 } 

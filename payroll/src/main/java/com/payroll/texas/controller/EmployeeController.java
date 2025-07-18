@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Map;
+import java.util.HashMap;
 
 @RestController
 @RequestMapping("/employees")
@@ -223,6 +225,201 @@ public class EmployeeController {
         } catch (Exception e) {
             logger.error("Error adding employee with company: {}", e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(java.util.Map.of("error", e.getMessage()));
+        }
+    }
+
+    // Add new department code for a company
+    @PostMapping("/company/{companyId}/department-codes")
+    public ResponseEntity<?> addDepartmentCode(
+            @PathVariable Long companyId,
+            @RequestBody Map<String, Object> departmentCodeData,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to add department code for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Add department code to company custom fields
+            Map<String, Object> newDepartmentCode = employeeService.addDepartmentCode(companyId, departmentCodeData);
+            return ResponseEntity.ok(newDepartmentCode);
+            
+        } catch (Exception e) {
+            logger.error("Error adding department code for company {}: {}", companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to add department code: " + e.getMessage()));
+        }
+    }
+
+    // Update specific department code for a company
+    @PutMapping("/company/{companyId}/department-codes/{codeId}")
+    public ResponseEntity<?> updateDepartmentCode(
+            @PathVariable Long companyId,
+            @PathVariable String codeId,
+            @RequestBody Map<String, Object> departmentCodeData,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to update department code {} for company: {}", codeId, companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Update specific department code in company custom fields
+            Map<String, Object> updatedDepartmentCode = employeeService.updateDepartmentCodeById(companyId, codeId, departmentCodeData);
+            return ResponseEntity.ok(updatedDepartmentCode);
+            
+        } catch (Exception e) {
+            logger.error("Error updating department code {} for company {}: {}", codeId, companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to update department code: " + e.getMessage()));
+        }
+    }
+
+    // Delete specific department code for a company
+    @DeleteMapping("/company/{companyId}/department-codes/{codeId}")
+    public ResponseEntity<?> deleteDepartmentCode(
+            @PathVariable Long companyId,
+            @PathVariable String codeId,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to delete department code {} for company: {}", codeId, companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Delete specific department code from company custom fields
+            employeeService.deleteDepartmentCodeById(companyId, codeId);
+            return ResponseEntity.ok(Map.of("message", "Department code deleted successfully"));
+            
+        } catch (Exception e) {
+            logger.error("Error deleting department code {} for company {}: {}", codeId, companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to delete department code: " + e.getMessage()));
+        }
+    }
+
+    // Get department codes for a company
+    @GetMapping("/company/{companyId}/department-codes")
+    public ResponseEntity<?> getDepartmentCodes(
+            @PathVariable Long companyId,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to get department codes for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Get department codes from company custom fields
+            Map<String, Object> departmentCodes = employeeService.getDepartmentCodes(companyId);
+            return ResponseEntity.ok(departmentCodes);
+            
+        } catch (Exception e) {
+            logger.error("Error getting department codes for company {}: {}", companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to get department codes: " + e.getMessage()));
+        }
+    }
+
+    // Update department codes for a company
+    @PutMapping("/company/{companyId}/department-codes")
+    public ResponseEntity<?> updateDepartmentCodes(
+            @PathVariable Long companyId,
+            @RequestBody Map<String, Object> departmentCodesData,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to update department codes for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Update department codes in company custom fields
+            Map<String, Object> updatedDepartmentCodes = employeeService.updateDepartmentCodes(companyId, departmentCodesData);
+            return ResponseEntity.ok(updatedDepartmentCodes);
+            
+        } catch (Exception e) {
+            logger.error("Error updating department codes for company {}: {}", companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to update department codes: " + e.getMessage()));
+        }
+    }
+
+    // Get default salary hours for a company
+    @GetMapping("/company/{companyId}/default-salary-hours")
+    public ResponseEntity<?> getDefaultSalaryHours(
+            @PathVariable Long companyId,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to get default salary hours for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Get default salary hours from company custom fields
+            Map<String, Object> defaultSalaryHours = employeeService.getDefaultSalaryHours(companyId);
+            return ResponseEntity.ok(defaultSalaryHours);
+            
+        } catch (Exception e) {
+            logger.error("Error getting default salary hours for company {}: {}", companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to get default salary hours: " + e.getMessage()));
+        }
+    }
+
+    // Update default salary hours for a company
+    @PutMapping("/company/{companyId}/default-salary-hours")
+    public ResponseEntity<?> updateDefaultSalaryHours(
+            @PathVariable Long companyId,
+            @RequestBody Map<String, Object> defaultSalaryHoursData,
+            @RequestHeader("Authorization") String authHeader) {
+        logger.info("Received request to update default salary hours for company: {}", companyId);
+        try {
+            // Extract user info from JWT token
+            String token = authHeader.substring(7); // Remove "Bearer "
+            Map<String, Object> validationResult = authService.validateTokenAndGetUser(token);
+
+            if (!(Boolean) validationResult.get("valid")) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Invalid or expired token"));
+            }
+
+            // Update default salary hours in company custom fields
+            Map<String, Object> updatedDefaultSalaryHours = employeeService.updateDefaultSalaryHours(companyId, defaultSalaryHoursData);
+            return ResponseEntity.ok(updatedDefaultSalaryHours);
+            
+        } catch (Exception e) {
+            logger.error("Error updating default salary hours for company {}: {}", companyId, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Failed to update default salary hours: " + e.getMessage()));
         }
     }
 } 
