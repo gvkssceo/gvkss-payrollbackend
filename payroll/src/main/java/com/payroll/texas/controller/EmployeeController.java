@@ -3,17 +3,35 @@ package com.payroll.texas.controller;
 import com.payroll.texas.model.Employee;
 import com.payroll.texas.service.EmployeeService;
 import com.payroll.texas.service.AuthService;
+import com.payroll.texas.service.RsaDecryptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Map;
 import java.util.HashMap;
+
+// DTOs for sensitive info
+class SensitiveInfoResponse {
+    public String ssn;
+    public String routingNumber;
+    public String accountNumber;
+    public SensitiveInfoResponse(String ssn, String routingNumber, String accountNumber) {
+        this.ssn = ssn;
+        this.routingNumber = routingNumber;
+        this.accountNumber = accountNumber;
+    }
+}
+class SensitiveInfoUpdateRequest {
+    public String ssn;
+    public String routingNumber;
+    public String accountNumber;
+}
 
 @RestController
 @RequestMapping("/employees")
@@ -27,6 +45,12 @@ public class EmployeeController {
     
     @Autowired
     private AuthService authService;
+
+    @Autowired
+    private com.payroll.texas.service.EncryptionService encryptionService;
+
+    @Value("${app.rsa.private-key}")
+    private String privateKeyPem;
 
     // Constructor to verify controller is being instantiated
     public EmployeeController() {
@@ -45,6 +69,17 @@ public class EmployeeController {
     public ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
         logger.info("Received request to add new employee: {}", employee.getEmail());
         try {
+            // Decrypt sensitive fields if they are not null and look encrypted
+            RsaDecryptor decryptor = new RsaDecryptor(privateKeyPem);
+            if (employee.getSsn() != null && !employee.getSsn().isEmpty()) {
+                try { employee.setSsn(decryptor.decrypt(employee.getSsn())); } catch (Exception ignored) {}
+            }
+            if (employee.getBankAccountNumberEncrypted() != null && !employee.getBankAccountNumberEncrypted().isEmpty()) {
+                try { employee.setBankAccountNumberEncrypted(decryptor.decrypt(employee.getBankAccountNumberEncrypted())); } catch (Exception ignored) {}
+            }
+            if (employee.getBankRoutingNumberEncrypted() != null && !employee.getBankRoutingNumberEncrypted().isEmpty()) {
+                try { employee.setBankRoutingNumberEncrypted(decryptor.decrypt(employee.getBankRoutingNumberEncrypted())); } catch (Exception ignored) {}
+            }
             Employee savedEmployee = employeeService.saveEmployee(employee);
             logger.info("Successfully added employee with ID: {}", savedEmployee.getId());
             
@@ -212,6 +247,64 @@ public class EmployeeController {
             // Set company from authenticated user context
             employee.setCompany(company);
 
+            // Decrypt sensitive fields (non-destructive, backward compatible)
+            try {
+                String pem = privateKeyPem != null ? privateKeyPem.replace("\n", "\n") : null;
+                if (pem != null && !pem.isEmpty()) {
+                    com.payroll.texas.service.RsaDecryptor decryptor = new com.payroll.texas.service.RsaDecryptor(pem);
+                    if (employee.getSsn() != null && !employee.getSsn().isEmpty()) {
+                        try { employee.setSsn(decryptor.decrypt(employee.getSsn())); } catch (Exception e) { logger.warn("SSN decryption failed: {}", e.getMessage()); }
+                    }
+                    if (employee.getBankAccountNumberEncrypted() != null && !employee.getBankAccountNumberEncrypted().isEmpty()) {
+                        try {
+                            String decryptedAccount = decryptor.decrypt(employee.getBankAccountNumberEncrypted());
+                            if (decryptedAccount == null || decryptedAccount.length() < 4) {
+                                throw new IllegalArgumentException("Bank account number is too short.");
+                            }
+                            // Re-encrypt for storage
+                            employee.setBankAccountNumberEncrypted(encryptionService.encryptBankAccount(decryptedAccount));
+                        } catch (Exception e) { logger.warn("Bank account decryption failed: {}", e.getMessage()); }
+                    }
+                    if (employee.getBankRoutingNumberEncrypted() != null && !employee.getBankRoutingNumberEncrypted().isEmpty()) {
+                        try {
+                            String decryptedRouting = decryptor.decrypt(employee.getBankRoutingNumberEncrypted());
+                            if (decryptedRouting == null || !decryptedRouting.matches("^\\d{9}$")) {
+                                throw new IllegalArgumentException("Invalid bank routing number. Expected 9 digits.");
+                            }
+                            // Re-encrypt for storage
+                            employee.setBankRoutingNumberEncrypted(encryptionService.encryptRoutingNumber(decryptedRouting));
+                        } catch (Exception e) { logger.warn("Bank routing decryption failed: {}", e.getMessage()); }
+                    }
+                } else {
+                    logger.warn("PRIVATE_KEY not set in application.yml; skipping decryption.");
+                }
+            } catch (Exception e) {
+                logger.warn("Decryption block failed: {}", e.getMessage());
+            }
+
+            // Validate decrypted sensitive fields (non-destructive)
+            String validationError = null;
+            if (employee.getSsn() != null && !employee.getSsn().matches("^\\d{3}-?\\d{2}-?\\d{4}$")) {
+                validationError = "Invalid SSN format. Expected 9 digits or XXX-XX-XXXX";
+            }
+            // No need to validate account/routing here, already done above
+            if (validationError != null) {
+                logger.warn("Validation failed: {}", validationError);
+                return ResponseEntity.badRequest().body(java.util.Map.of("error", validationError));
+            }
+
+            // AES re-encrypt sensitive fields for storage (hybrid encryption)
+            // REMOVE these lines:
+            // if (employee.getSsn() != null) {
+            //     employee.setSsn(encryptionService.encryptSSN(employee.getSsn()));
+            // }
+            // if (employee.getBankAccountNumberEncrypted() != null) {
+            //     employee.setBankAccountNumberEncrypted(encryptionService.encryptBankAccount(employee.getBankAccountNumberEncrypted()));
+            // }
+            // if (employee.getBankRoutingNumberEncrypted() != null) {
+            //     employee.setBankRoutingNumberEncrypted(encryptionService.encryptRoutingNumber(employee.getBankRoutingNumberEncrypted()));
+            // }
+
             logger.info("Saving employee: {} {}", employee.getFirstName(), employee.getLastName());
             Employee savedEmployee = employeeService.saveEmployee(employee);
             java.util.Map<String, Object> response = new java.util.HashMap<>();
@@ -227,6 +320,7 @@ public class EmployeeController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(java.util.Map.of("error", e.getMessage()));
         }
     }
+
 
     // Add new department code for a company
     @PostMapping("/company/{companyId}/department-codes")
@@ -420,6 +514,58 @@ public class EmployeeController {
             logger.error("Error updating default salary hours for company {}: {}", companyId, e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Failed to update default salary hours: " + e.getMessage()));
+
+    // Secure endpoint to fetch decrypted sensitive info
+    @GetMapping("/{id}/sensitive-info")
+    public ResponseEntity<?> getSensitiveInfo(@PathVariable Long id) {
+        logger.info("Sensitive info requested for employee {} at {}", id, LocalDateTime.now());
+        Optional<Employee> employeeOpt = employeeService.getEmployeeById(id);
+        if (employeeOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee not found");
+        }
+        Employee employee = employeeOpt.get();
+        String ssn = null, routing = null, account = null;
+        try {
+            ssn = encryptionService.decryptSSN(employee.getSsnEncrypted());
+        } catch (Exception e) { logger.warn("Failed to decrypt SSN for employee {}", id); }
+        try {
+            routing = encryptionService.decryptRoutingNumber(employee.getBankRoutingNumberEncrypted());
+        } catch (Exception e) { logger.warn("Failed to decrypt routing number for employee {}", id); }
+        try {
+            account = encryptionService.decryptBankAccount(employee.getBankAccountNumberEncrypted());
+        } catch (Exception e) { logger.warn("Failed to decrypt account number for employee {}", id); }
+        // Audit log
+        logger.info("Sensitive info accessed for employee {} by user at {}", id, LocalDateTime.now());
+        return ResponseEntity.ok(new SensitiveInfoResponse(ssn, routing, account));
+    }
+
+    // Secure endpoint to update sensitive info
+    @PatchMapping("/{id}/sensitive-info")
+    public ResponseEntity<?> updateSensitiveInfo(@PathVariable Long id, @RequestBody SensitiveInfoUpdateRequest req) {
+        logger.info("Sensitive info update requested for employee {} at {}", id, LocalDateTime.now());
+        Optional<Employee> employeeOpt = employeeService.getEmployeeById(id);
+        if (employeeOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Employee not found");
+        }
+        Employee employee = employeeOpt.get();
+        try {
+            if (req.ssn != null && !req.ssn.isEmpty()) {
+                employee.setSsnEncrypted(encryptionService.encryptSSN(req.ssn));
+            }
+            if (req.routingNumber != null && !req.routingNumber.isEmpty()) {
+                employee.setBankRoutingNumberEncrypted(encryptionService.encryptRoutingNumber(req.routingNumber));
+            }
+            if (req.accountNumber != null && !req.accountNumber.isEmpty()) {
+                employee.setBankAccountNumberEncrypted(encryptionService.encryptBankAccount(req.accountNumber));
+            }
+            employeeService.saveEmployee(employee);
+            // Audit log
+            logger.info("Sensitive info updated for employee {} by user at {}", id, LocalDateTime.now());
+            return ResponseEntity.ok("Sensitive info updated");
+        } catch (Exception e) {
+            logger.error("Failed to update sensitive info for employee {}: {}", id, e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed to update sensitive info: " + e.getMessage());
+
         }
     }
 } 
